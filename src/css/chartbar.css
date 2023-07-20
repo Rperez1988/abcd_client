@@ -1,0 +1,49 @@
+.stocksTestedChartBar{
+    flex-basis: 100%;
+    text-align: center;
+
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: row;
+
+    min-height: 50px;
+    max-height: 50px;
+    font-size: large;
+    font-family: 'Oswald', sans-serif;
+    border-left: 1px solid rgb(57, 57, 57);
+    border-right: 1px solid rgb(57, 57, 57);
+    border-bottom: 1px solid rgb(57, 57, 57);
+
+}
+
+.stocksTestedChartBar:hover{
+    flex-basis: 100%;
+    text-align: center;
+
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: row;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    min-height: 50px;
+    max-height: 50px;
+    background-color: rgb(57, 57, 57);
+}
+
+
+.stocksTesteddChartBarLabel{
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(255, 255, 255);
+
+}
+
+
+
+
+

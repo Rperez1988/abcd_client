@@ -1,0 +1,24 @@
+/* 
+.strategyresultsheader{
+    height: auto;
+    width: 100%;
+    border-bottom: 2px solid white;
+
+    
+}
+
+.strategyresultsbody{
+    
+    font-size: x-large;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.strategyresultsheadertext{
+    color: white;
+    font-size: xx-large;
+    font-family: 'Oswald', sans-serif;
+} */

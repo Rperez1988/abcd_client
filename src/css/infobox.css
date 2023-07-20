@@ -1,0 +1,29 @@
+.containerBox{
+    padding-top: 20px;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.containerBox2{
+    width: 100%;
+}
+
+.header{
+    background-color: rgb(232, 232, 232);
+    display: flex;
+    width: 100%;
+    flex-basis: 0;
+    flex: auto;
+    color: black;
+    min-height: 25px;
+}
+
+.statsBox{
+    width: 10%;
+    text-align: center;
+    flex: auto;
+}
+

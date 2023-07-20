@@ -1,0 +1,177 @@
+.tickerSymbol{
+    width: 10%;
+    padding-left: 5px;
+    
+}
+
+.symbol2{
+    background-color: #000000;
+    border-radius: 10px;
+    border: 1px solid #758bff;
+    text-align: center;
+    font-family: 'Kalam', cursive;
+    max-height: 50px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.symbol2-Hovered{
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow:
+    0 0 7px #fff,
+    0 0 7px #fff,
+    0 0 7px #fff,
+    0 0 7px #4564fc,
+    0 0 7px #4564fc,
+    0 0 7px #4564fc,
+    0 0 7px #4564fc,
+    0 0 7px #4564fc;
+    /* border: 1px solid #758bff; */
+    border: 1px solid #002aff;
+    text-align: center;
+    font-family: 'Kalam', cursive;
+    max-height: 50px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.chart-trades-bar-cube{
+    /* min-width: 15%; */
+    max-width: 8%;
+    flex-basis: 100%;
+    text-align: center;
+    border: 1px solid #43437e;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+}
+
+
+.chart-trades-bar-cube-Hovered{
+        /* min-width: 15%; */
+        max-width: 8%;
+        flex-basis: 100%;
+        text-align: center;
+        /* border: 1px solid #0000ff; */
+
+        border: 1px solid #5858a4;
+        box-shadow:
+        0 0 7px #fff,
+        /* 0 0 7px #4d01ff, */
+        /* 0 0 7px #4d01ff, */
+        0 0 7px #4d01ff;
+        /* 0 0 7px #6b03b1,
+        0 0 7px #6b03b1,
+        0 0 20px #6b03b1; */
+        /* 0 0 20px #6b03b1; */
+      
+        border-radius: 10px;
+        background-color: rgb(0, 0, 0);
+        display: flex;
+        flex-direction: row;
+        margin-left: 5px;
+}
+
+
+
+
+.chart-trades-bar-cube-active{
+    min-height: 100%;
+    width: 65%;
+    font-family: 'Graduate', cursive;
+    font-size: large;
+
+    color: darkgreen;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+
+.chart-trades-bar-cube-closed{
+    min-height: 100%;
+    width: 65%;
+    font-family: 'Graduate', cursive;
+    font-size: large;
+
+    color: darkred;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.chart-trades-bar-cube-text{
+    min-height: 100%;
+    width: 65%;
+    font-family: 'Graduate', cursive;
+    font-size: large;
+
+    color: darkgray;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+
+.chart-trades-bar-cube-trendFollow{
+    min-height: 100%;
+    width: 65%;
+    font-family: 'Graduate', cursive;
+    font-size: large;
+
+    color: darkgray;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+
+.ticksup{
+    min-height: 100%;
+    width: 65%;
+    font-family: 'Graduate', cursive;
+    font-size: large;
+
+    color: darkgreen;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.ticksdown{
+    min-height: 100%;
+    width: 65%;
+    font-family: 'Graduate', cursive;
+    font-size: large;
+
+    color: darkred;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+

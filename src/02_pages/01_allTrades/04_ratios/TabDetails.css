@@ -1,0 +1,97 @@
+/* Common breakpoints are 
+320px — 480px for mobile devices 
+
+481px — 768px for iPads & tablets 
+
+769px — 1024px for small screens like laptop
+
+1025px — 1200px for large screens like Desktops
+1201px and above for extra large screens like TV. */
+
+/* ACCUMRETURN, WIN RATIO, AVERAGE RETURN */
+.tradeDetails-Container{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid gray;
+
+}
+.tradeDetails-tab-Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* height: 90%; */
+    width: 100%;
+    /* margin: auto; */
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.trade-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* height: 90%;
+    width: 94%; */
+    height: 100%;
+    width: 100%;
+    /* margin: auto; */
+    /* border-radius: 5px; */
+}
+.tradeDetails-tab1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+
+}
+.tradeDetails-tab2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+.returnEmpty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(186, 186, 186);
+    height: 25%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 70%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap');
+.returnText{
+    height: 25%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 85%;
+    padding-left: 25px;
+}
+.returnNumber-green{
+    color: #23ae98;
+    height: 50%;
+    width: 100%;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 190%;
+    padding-left: 25px;
+}
+.returnNumber-red{
+    color: #ab536d;
+    height: 50%;
+    width: 100%;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 190%;
+    padding-left: 25px;
+}
+.line{
+    width: 90%;
+    height: 80%;
+}

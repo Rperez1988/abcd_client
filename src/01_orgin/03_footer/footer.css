@@ -1,0 +1,8 @@
+.footer{
+    min-height: 3.5%;
+    max-height: 3.5%;
+
+    background-color: var(--newblue);
+    color: ghostwhite;
+    border: 1px solid white;
+  }

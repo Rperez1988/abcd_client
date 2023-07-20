@@ -1,0 +1,13 @@
+
+.statistics-stats-2{
+    /* border: 1px solid rgb(189, 171, 156); */
+    height: 95%;
+    min-width: 95%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow: scroll
+}
+.statistics-stats-2::-webkit-scrollbar { 
+    display: none;  
+}

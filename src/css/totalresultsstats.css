@@ -1,0 +1,29 @@
+.statBox{
+    min-width: 19%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px inset rgb(117, 117, 117);
+    margin: auto;
+}
+
+.labelstatbox{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Joan', serif;
+}
+
+.label{
+   min-width: 100%;
+   text-align: center;
+   font-size:large;
+}
+
+.stat{
+    min-width: 100%;
+    text-align: center;
+    font-size: xx-large;
+}

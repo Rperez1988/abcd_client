@@ -1,0 +1,19 @@
+.row-label{
+    min-height: 40px;
+    width: 100%;
+    /* border-bottom: 1px solid rgb(60, 89, 139); */
+    display: flex;
+    flex-direction: row;
+    color: #94bde4;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bolder;
+    font-size: 140%;
+}
+.row-text{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content:left;
+    align-items:center;
+    
+}

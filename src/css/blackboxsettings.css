@@ -1,0 +1,146 @@
+
+.settingBox{
+    flex-basis: 100%;
+    width: 200px;
+    min-height: 150px;
+}
+
+
+.settingBox1{
+
+    height: 100%;
+    /* background-color: rgb(194, 194, 194); */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.settingBoxHeader{
+    height: 25%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: rgb(173, 4, 4);
+
+}
+
+.sbh{
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settingBoxBody{
+    height: 75%;
+
+
+    
+}
+
+.settingBoxOptionBox{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.settingBoxOption{
+    height: 100%;
+    width: 100%;
+  
+    display: flex;
+    flex-direction: row;
+;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-basis: 100%;
+
+
+}
+
+.settingBoxOptionCheck{
+    height: 100%;
+    width: 20%;
+
+
+}
+
+.settingBoxOptionLabelActive{
+    height: 100%;
+    min-height: 25px;
+    width: 80%;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgb(61, 61, 61);
+    text-align: center;
+    cursor: pointer;
+}
+
+.settingBoxOptionLabelActive{
+
+    height: 100%;
+    width: 80%;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgb(197 34 34);
+    text-align: center;
+    cursor: pointer;
+    background-color: #363636;
+
+
+}
+.settingBoxOptionLabel:hover{
+    height: 100%;
+    width: 80%;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    /* background-color: rgb(174, 174, 174); */
+    font-size: large;
+}
+
+.settingBoxOptionLabel:active{
+    height: 100%;
+    width: 80%;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    transform: scale(0.98);
+}
+
+
+
+
+
+
+.stocksTestedSettings > div {
+    margin: 8px;
+  }
+
+.sb{
+    display: flex;
+    flex-direction: row;
+
+}

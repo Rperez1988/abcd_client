@@ -1,0 +1,62 @@
+
+.stockResults3{
+    margin: auto;
+    min-width: 10%;
+    
+    background-color: rgb(235, 235, 235);
+    border: 3px solid gray;
+    display: flex;
+    flex-direction: row; 
+}
+
+.stockResults3:hover{
+    margin: auto;
+    min-width: 10%;
+    
+    background-color: rgb(130, 130, 130);
+    border: 3px solid rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row; 
+    margin: 6px;
+}
+
+.totalResultsLeft{
+    width: 100%;
+    height: 100%;
+    border-right: solid 1px black;
+}
+
+.totalResultsLeft2{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.topHalf{
+    /* min-height: 70%; */
+
+    margin: auto;
+}
+
+.stockName{
+    margin: auto;
+}
+
+.stockNameWin{
+    color: green;
+    margin: auto;
+}
+
+.stockNameLost{
+    color: red;
+    margin: auto;
+}
+
+.botHalf{
+    /* min-height: 30%; */
+
+
+    display: flex;
+    flex-direction: row;
+}
+

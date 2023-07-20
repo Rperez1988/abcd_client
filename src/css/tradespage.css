@@ -1,0 +1,64 @@
+.TradesPage{
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(46, 46, 46);
+    overflow: scroll;
+
+}
+
+.TradesPage::-webkit-scrollbar { 
+    display: none; 
+}
+
+.backButton{
+    height: 50px;
+    width: 50px;
+}
+
+.tradesContainer{
+    min-height: 900px;
+    background-color: rgb(21, 21, 21);
+    box-shadow: 0 0 10px #ccc;
+    min-width: 80%;
+    max-width: 80%;
+    margin: auto;
+    padding: 25px;
+
+}
+
+.tradesContainer2{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tradesHeader{
+    border-bottom: 2px solid white;
+    width: 100%;
+    height: 5%;
+
+}
+
+.tradesBody{
+
+    height: 95%;
+    width: 100%;
+    padding-top: 15px ;
+
+}
+
+.tradesBody2{
+
+    height: 100%;
+    width: 100%;
+    
+}
+
+
+
+
+
+

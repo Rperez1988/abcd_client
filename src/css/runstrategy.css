@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+
+.runStrategyBox{
+    min-height: 550px;
+    max-height:550px;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+}
+
+.runStrategyBoxLeft{
+    min-height: 100%;
+    width: 30%;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    padding-bottom: 0px;
+}
+
+
+
+.runStrategyBoxRight{
+    min-height: 100%;
+    width: 70%;
+
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+.BoxRight1{
+    flex-basis: 100%;
+    /* border: 1px solid orange; */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.BoxRight3{
+    flex-basis: 100%;
+    /* border: 1px solid orange; */
+    display: flex;
+    flex-direction: column;
+    padding: 10px
+}
+
+
+.runStrategyLoadingBox{
+    min-height: 80%;
+    width: 100%;
+    border: 3px inset white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    /* overflow-x: hidden; */
+    overflow:auto;
+    background-color: rgb(46, 46, 46);
+    bottom:0;
+
+}
+
+.loadingBarBox{
+    min-height: 10%;
+    width: 100%;
+    flex-basis: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.loadingBar{
+
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    height: 20%;
+    overflow: hidden;
+
+}
+
+.loadingBar2{
+
+   
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    background-color: darkgreen;
+  
+    min-width: 100%;
+    height: 100%;
+    
+    
+}
+
+.runStrategyLoadingBox::-webkit-scrollbar {
+    width: .3em;
+  }
+   
+.runStrategyLoadingBox::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+.runStrategyLoadingBox::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 5px;
+  }
+
+.runStrategyLoadingTab{
+    /* border: 1px solid red */
+    background-color: rgb(46, 46, 46);
+    display: flex;
+    flex-direction: row;
+}
+
+
+.runStrategyBoxTime2{
+    height: 25%;
+    width: 100%;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+}
+
+.runStrategyBoxTime2 > div{
+    margin-bottom: 5px;
+}
+.runStrategyBoxButtonBox{
+    flex-basis: 100%;
+
+    flex-basis: 100%;
+    text-align: center;
+    /* border: 1px solid white;testedList
+    border-radius: 10px;
+    background-color: rgb(77, 77, 77); */
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+}
+
+.runStrategyBoxButton{
+
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-height: 50px;
+    max-height: 50px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(77, 77, 77);
+
+}
+
+.loadingTabLeft{
+    flex-basis: 70%;
+    padding-left: 5px;
+}
+
+.loadingTabRight{
+    flex-basis: 30%;
+    color: green;
+}
+
+
+.loadingNumber{
+    height: 10%;
+    text-align: center;
+}
+
+.BR{
+ 
+    height: 100%;
+    border: 1px solid white;
+    border-radius: 15px;
+    background-color: rgb(46, 46, 46);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.BRheader{
+    height: 10%;
+    width: 100%;
+    border-bottom: 1px solid white;
+
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+}
+
+.BRheaderText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    font-family: 'Nunito', sans-serif;
+    overflow: hidden;
+}
+
+.BRbody{
+    height: 90%;
+    width: 100%;
+
+}
+
+.BoxRight3 > div{
+    margin-bottom: 10px;
+}
+
+
+
+/* Build */
+
+.runStrategyBoxTime1{
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgb(46, 46, 46);
+    /* border: 1px solid white; */
+}
+
+.runStrategy-Build-Test{
+    width: 100%;
+    height: 20%;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.runStrategy-Build-SelectedStrategy{
+    width: 100%;
+    height: 10%;
+    border: 1px solid white;
+    background-color: aliceblue;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.runStrategy-Build-On{
+    width: 100%;
+    height: 20%;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.runStrategy-Build-SelectedList{
+    width: 100%;
+    height: 10%;
+    border: 1px solid white;
+    background-color: aliceblue;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.runStrategy-Build-{
+    width: 100%;
+    height: 80%;
+    border: 1px solid white;
+}
+
+

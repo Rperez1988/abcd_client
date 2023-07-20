@@ -1,0 +1,60 @@
+.Filter_Wrapper{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #080915;
+    /* background-color: black; */
+    padding: .5rem;
+}
+.Filter_Wrapper2{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #080915;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: row;
+}
+.Filter_Wrapper2_Flex_Item_1{
+    width: 5%;
+    height: 100%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+}
+.Filter_Wrapper2_Flex_Item_2{
+    width: 95%;
+    height: 100%;
+    /* border: 1px solid white; */
+    
+}
+.Item_1_Flex_Item_1{
+    width: 100%;
+    height: 20%;
+    /* border: 1px solid white; */
+    color: white;
+    display: flex;
+    /* justify-content: left; */
+    align-items: center;
+    font-size: 120%;
+}
+.Item_1_Flex_Item_2{
+    width: 100%;
+    height: 20%;
+    /* border: 1px solid white; */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120%;
+}
+.number_of_trades{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 2px solid rgb(87, 96, 103);
+    width: 60px;
+    min-width: 60px;
+}

@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+.pivotDetailsbodyrow{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.pdbr1{
+    width: 20%;
+    height: 100%;
+    border: 1px solid rgb(41, 40, 40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 130%;
+    color: gray;
+}

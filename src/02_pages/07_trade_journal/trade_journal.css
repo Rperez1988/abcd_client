@@ -1,0 +1,83 @@
+.trade_journal_container{
+
+    height: 100%;
+    width: 100%;
+    background-color: #0d1219;
+    color: white
+}
+.row_one{
+    width: 100%;
+    height: 25%;
+  
+    display: flex;
+
+}
+.row_two{
+    width: 100%;
+    height: 25%;
+  
+}
+.row_three{
+    width: 100%;
+    height: 25%;
+  }
+.row_four{
+    width: 100%;
+    height: 25%;
+  
+}
+.number_of_trades__{
+    box-sizing: border-box;
+    height: 100%;
+    width: 20%;
+
+    padding: .5rem;
+}
+.box_wrapper{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+   
+    background-color: #1a2231;
+    border-radius: 2%;
+}
+.box_header{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    font-size: 150%;
+    color: rgb(141, 141, 148);
+    font-weight: lighter;
+    font-family: 'Sofia Sans Extra Condensed';
+}
+.box_body{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 250%;
+    justify-content: center;
+    color: rgb(141, 141, 148);
+    flex-direction: column;
+}
+.box_body_{
+    height: 80%;
+    width: 100%;
+
+    font-size: 100%;
+
+    color: rgb(141, 141, 148);
+    flex-direction: column;
+}
+.trade_symbol{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 130%;
+}

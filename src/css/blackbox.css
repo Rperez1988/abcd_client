@@ -1,0 +1,68 @@
+.strategyresults{
+    background-color: #121221;
+    box-shadow: 0 0 10px #ccc;
+    color: white;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid white;
+    width: 70%;
+    margin: auto;
+}
+
+.ChartBarBox{
+    background-color: #121221;
+    box-shadow: 0 0 10px #ccc;
+    color: white;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid white;
+    width: 70%;
+    height: auto;
+    margin: auto;
+}
+
+.totalResultsLefty{
+    background-color: rgb(21, 21, 21);
+    box-shadow: 0 0 10px #ccc;
+    color: white;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid white;
+    width: 50%;
+}
+
+.stocksTestedSettings{
+    height: auto;
+    width: 100%;
+  
+    display: flex;
+    flex-direction: row;
+    min-height: 150px;
+    max-height: 150px;
+    /* background-color: white; */
+}
+
+
+.loading{
+
+    background-color: #121221;
+    box-shadow: 0 0 10px #ccc;
+    color: white;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid white;
+    width: 70%;
+    margin: auto;
+}
+
+.chartImage{
+    width: 100%;
+}
+
+/* .buildingChart{
+
+    min-height: 900px;
+}
+ */
+
+

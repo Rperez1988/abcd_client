@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Source+Code+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap');
+
+.stocksTestedPadding{
+    display: flex;
+    flex-direction: column;
+    height: 100%
+} 
+
+.stocksTestedBody{
+    min-height: 100%;
+    min-width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.stocksTestedChart{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stocksTestedChartBarHeader{
+    flex-basis: 100%;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(77, 77, 77);
+    display: flex;
+    flex-direction: row;
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.stocksTestedHeaderLabel {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-height: 50px;
+    max-height: 50px;
+}
+  
+.stocksTestedHeaderLabel div {
+    width: 100px;
+    height: 100px;
+}
+
+.noStocksTested{
+    min-height: 300px;
+    max-height: 250px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 210px;
+    font-size: large;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+
+}
+
+[data-testid="rings-loading"] {
+    align-items: center;
+    justify-content: center;
+
+}
+
+.spinner{
+    min-height: 300px;
+    max-height: 250px;
+    color: white;
+    /* align-items: center;
+    justify-content: center;
+    text-align: center; */
+    padding-top: 210px;
+    padding-left: 47%;
+    font-size: x-large;
+
+}
+
+.stocksTestedChartBarFooter{
+    flex-basis: 100%;
+    border-radius: 10px;
+    background-color: rgb(77, 77, 77);
+    min-height: 50px;
+    max-height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.PerPage{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  white;
+    text-align: center;
+    flex-basis: 100%;
+}
+
+.NumOfPages{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  white;
+    text-align: center;
+
+    flex-basis: 100%;
+
+}
+
+.PrevNext{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  white;
+    text-align: center;
+
+    flex-basis: 100%;
+}
+
+.perPageText{
+    color:  rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    width: 20%;
+}
+
+.amount{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  white;
+    text-align: center;
+    width: 80%;
+
+}
+
+.chartBarFooterFlex1Active{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(255, 255, 255);
+    text-align: center;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.chartBarFooterFlex1{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+}
+
+.d1{
+    width:20%
+}
+
+.d2{
+    width:60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  white;
+    text-align: center;
+}
+
+.pages{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+}
+
+.pages div {
+
+    height: 100%;
+}
+
+.pages:active{
+
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+
+
+    transform: translateY(4px);
+}
+
+.pagesActive{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  white;
+    text-align: center;
+    cursor: pointer;
+    font-size: x-large;
+
+}
+
+.pn1{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+}
+
+.pn1:active{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+    transform: translateY(4px);
+}
+
+.pn1:active{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+    transform: translateY(4px);
+}
+
+.chartBarFooterPrev{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+.chartBarFooterPrevMax{
+
+    justify-content: center;
+    color:  rgb(34, 34, 34);
+
+
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    cursor: pointer;
+}
+
+.chartBarFooterPrev:active{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;;
+    transform: translateY(4px);
+}
+
+.chartBarFooterNext{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+}
+
+.chartBarFooterNext:active{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    transform: translateY(4px);
+}
+
+.chartBarFooterNextMax{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:  rgb(34, 34, 34);
+    text-align: center;
+    cursor: pointer;
+}
+
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+p {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+} 
+
+
+/* Good */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.stocksTestedBox{
+    background-color: rgb(21, 21, 21);
+    box-shadow: 0 0 10px #ccc;
+    color: white;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid white;
+    width: 100%;
+    height: auto;
+}
+
+

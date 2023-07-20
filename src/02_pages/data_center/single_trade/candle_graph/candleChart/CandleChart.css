@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono&family=Zen+Dots&display=swap');
+.candle_chart_container{
+    box-sizing: border-box; 
+    height: 93%;
+    cursor:crosshair;
+    width: 100%;
+}
+.candle_chart_container_2{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    box-sizing: border-box; 
+}
+.candle_chart_wrapper{
+    width: 95%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.canvas_header{
+    width: 100%;
+    min-height: 7%;
+    max-height: 7%;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box; 
+    font-size: 100%;
+    /* background-color: white; */
+
+    
+}
+.canvas{
+    width: 100%;
+    max-height: 93%;
+    min-height: 93%;
+    height: 93%;
+    display: block;
+    border-left: none;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.canvas_dates{
+    min-height: 7%;
+    max-height: 7%;
+    height: 7%;
+    width: 100%;
+    /* background-color: black; */
+}
+.canvas_prices{
+    min-width: 5%;
+    max-width: 5%;
+    width: 5%;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.details-box-bar{
+    min-width: 80px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+ 
+}
+.details-key-bar{
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-family: 'Poppins', sans-serif; */
+    color: white;
+    
+
+}
+.details-value-bar{
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+
+}
+.details-box{
+    width: 125px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+.details-key{
+    height: 100%;
+    min-width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-family: 'Poppins', sans-serif; */
+    color: white
+
+}
+.details-value-number{
+    height: 100%;
+    min-width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+
+}
+.details-box-type{
+    /* margin-left: 5px; */
+    width: 180px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+.details-key-type{
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+.details-value-type{
+    min-width: 70%;
+    height: 100%;
+    /* border: 1px solid white; */
+    box-sizing: border-box; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(35, 158, 220);
+}
+.details-box-entered{
+    /* margin-left: 5px; */
+    width: 180px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+.details-key-entered{
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.details-value-entered{
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 145, 0);
+}
+.details-box-stoploss{
+    /* margin-left: 5px; */
+    width: 180px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+
+
+}
+.details-key-stoploss{
+    height: 100%;
+    min-width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.details-value-stoploss{
+    height: 100%;
+    min-width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(35, 220, 143);
+}
+.details-value-tradeStatus-closed{
+    height: 100%;
+    min-width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 0, 0);
+}
+.details-value-tradeStatus-open{
+    height: 100%;
+    min-width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(31, 202, 113);
+}
+.details-box-takeprofit{
+    /* margin-left: 5px; */
+    width: 200px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+.details-key-takeprofit{
+    height: 100%;
+    min-width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white
+}
+.details-value-takeprofit{
+    height: 100%;
+    min-width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(35, 220, 143);
+}
+.details-box-risk{
+    /* margin-left: 5px; */
+    width: 120px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+.details-key-risk{
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white
+}
+.details-value-risk{
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: rgb(255, 0, 0); */
+}
+.details-box-reward{
+    /* margin-left: 5px; */
+    width: 150px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+.details-key-reward{
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: white */
+}
+.details-value-reward{
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: rgb(35, 220, 143); */
+}
+.dash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 30px;
+}
+
+.details-value-ohlc-green{
+    margin-left: 5px;
+    min-width: 40px;
+    height: 100%;
+    box-sizing: border-box; 
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* color: rgb(35, 220, 143); */
+
+}
+.details-value-ohlc-red{
+    margin-left: 5px;
+    min-width: 40px;
+    height: 100%;
+    box-sizing: border-box; 
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* color: rgb(255, 62, 62); */
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+.pricesa{
+    /* width: 100%;
+    max-height: 5%;
+    min-height: 5%;
+    background-color: black; */
+
+}
+.pricesb{
+    width: 100%;
+    max-width: 100%;
+    max-height: 93%;
+    min-height: 93%;
+    height: 93%;
+    border-top: none;
+    border-bottom: none;
+    margin: auto;
+
+}
+.pricesc{
+    width: 100%;
+    max-height: 7%;
+    min-height: 7%;
+    height: 7%;
+
+}

@@ -1,0 +1,12 @@
+.stocksTestedPadding{
+    display: flex;
+    flex-direction: column;
+}
+
+.strategyresultsbody{
+    font-size: x-large;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+}
+

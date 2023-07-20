@@ -1,0 +1,57 @@
+.candle_graph_sidebar{
+    height: 100%;
+    min-width: 5%;
+    max-width: 5%;
+    width: 5%;
+    /* background-color: black; */
+    overflow: hidden;
+    /* border-right: 1px solid rgb(79, 79, 79); */
+    display: flex;
+    flex-direction: column;
+}
+.sidebaricon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+}
+.sidebaricon:hover{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    /* background-image: linear-gradient(to right, 
+    rgba(254, 254, 254, 0.507), 
+    rgba(15, 97, 134, 0.979),
+    rgb(32, 84, 151));
+    */
+    opacity: 0.9;
+    
+}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+.sidebarimg-active{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 160%;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    /* filter: invert(63%) sepia(49%) saturate(7126%) hue-rotate(171deg) brightness(105%) contrast(90%);
+    filter: invert(36%) sepia(27%) saturate(2378%) hue-rotate(142deg) */
+
+}
+.sidebarimg{
+    width: 45%;
+    /* filter: invert(63%) sepia(49%) saturate(7126%) hue-rotate(171deg) brightness(105%) contrast(90%);
+    filter: invert(36%) sepia(27%) saturate(2378%) hue-rotate(142deg); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 160%;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    
+}

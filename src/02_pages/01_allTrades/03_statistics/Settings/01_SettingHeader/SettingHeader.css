@@ -1,0 +1,31 @@
+.StrategyettingsLabel{
+    width: 100%;
+    
+    width: 100%;
+    height: 5%;
+    border: 1px solid white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&display=swap');
+.StrategySettings_2{
+    width: 100%;
+    height: 100%;
+    /* border-bottom: 3px solid rgb(72, 90, 103); */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    color: rgba(255, 255, 255, 0.71);
+    flex-direction: row;
+    font-size: 190%;
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    color: #58728a;
+    padding-top: 10px;
+
+
+}
+.settingsIcon{
+    height:25px;
+}
+.SettingsText{
+    padding-left: 10px;
+}

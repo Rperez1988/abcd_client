@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Josefin+Sans:ital,wght@0,200;0,300;1,100&family=PT+Sans+Narrow&family=Patua+One&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+
+.menuOptions3{
+    padding-right: 0;
+    max-width: 300px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menuOptions3:active {
+    transform: scale(0.98);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
+}
+
+.menuOptions4{
+    display: flex;
+    overflow: visible;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    display: block;
+    color: white;
+    border-bottom: 1px solid rgb(46, 46, 46);
+    display: flex;
+    height: 40px;
+
+
+}
+
+.menuOptions4:hover{
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+.icon{
+    height: auto;
+    position: relative;
+}
+
+.icon2{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 5px;
+
+    padding-right: 0px;
+    position: relative;
+}
+
+.bearish{
+    max-width:60%;
+    max-height:60%;
+}
+
+.name{
+    width: 60%;
+}
+
+.name2{
+    font-size: large; 
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    padding-left: 0px;
+    position: relative;
+    
+}
+
+.number{
+    width: 15%;
+    height: auto;
+    position: relative;
+}
+
+.number2{
+    font-size: large; 
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    padding-left: 0px;
+    position: relative;
+    text-align: center;
+}
+
+.optionActive{
+    min-height: auto;
+}
+
+.optionUnActive{
+    overflow: hidden;
+    max-height: 0px;
+}
+
+.optionActive2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.searchstock{
+    width: 50%;
+    min-height: 30px;
+    margin: 15px;
+    margin: auto;
+}
+
+.searchstock2{
+    margin: auto;
+    width: 100%;
+    min-height: 30px;
+    text-align: center;
+    font-size: x-large;
+    background-color: #28282d;
+    color: white;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    font-size: small;
+
+}
+
+.stockoptions{
+    border-bottom: 1px solid black;
+    text-align: center;
+    background-color: rgb(230, 230, 230);
+    color: black;
+    height: 35px;
+    font-size: large;
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.stockoptions:active {
+    transform: scale(0.98);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
+}
+
+.stockoptions:hover{
+    background-color: rgb(118, 118, 118);
+    color: white;
+    border-bottom: 1px solid black;
+    text-align: center;
+    height: 35px;
+    font-size: x-large;
+    font-family: 'Patrick Hand', cursive;
+    
+}
