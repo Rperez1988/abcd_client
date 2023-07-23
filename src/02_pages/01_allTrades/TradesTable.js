@@ -157,6 +157,8 @@ const filter_by_rsi = (allTrades, filterOrder, setAllTrades, setFilterOrder) => 
 			return
 	}
 }
+
+
 const TradesTable = (props) => {
 
     const {
@@ -168,6 +170,8 @@ const TradesTable = (props) => {
 
     } = props
 
+
+
 	const [symbol_filter_order, set_symbol_filter_order] = useState(0)
 	const [pnl_filter_order, set_pnl_filter_order] = useState(0)
 	const [return_filter_order, set_return_filter_order] = useState(0)
@@ -178,6 +182,7 @@ const TradesTable = (props) => {
 	const [rsi_filter_order, set_rsi_filter_order] = useState(0)
     const [currentFilter, setCurrentFilter] = useState('All')
 	const [activeRowIndex, setActiveRowIndex] = useState(tradeIdInView)
+	
     const style_header = {
 		background: colorTheme.chart.header,
 		color: colorTheme.chart.header_color,
@@ -214,6 +219,7 @@ const TradesTable = (props) => {
 	useEffect(()=>{
 		setAllTrades(allTrades)
 
+
 	},[])
 	useEffect(()=>{
 
@@ -222,27 +228,18 @@ const TradesTable = (props) => {
 		
 	}, [tradeIdInView])
 
+	const [inputValue, setInputValue] = useState('');
+
+  // Function to handle input changes
+	const handleInputChange = (event) => {
+		setInputValue(event.target.value);
+	};
+
     return(
 
         <>
 
-            <div className="chart_filter_options" 
-		        
-				style={{background: 'rgb(17 36 62)',
-				color: "white"
-			
-			}}
-				
-			>
-
-                {filter_options.map((item,index)=>{
-
-                    return(
-                        <div className={currentFilter === item ? "filter_option_button_on" : 'filter_option_button_off'} onClick={()=>{setCurrentFilter(item)}} key={index}>{item}</div>
-                    )
-                })}
-
-            </div>
+  
 
         	<div className='Chart_Header' 
 			        
@@ -268,7 +265,7 @@ const TradesTable = (props) => {
 							item === 'CD' && filter_by_cd(allTrades, cd_filter_order, setAllTrades, set_cd_filter_order)
 							item === 'RSI' && filter_by_rsi(allTrades, rsi_filter_order, setAllTrades, set_rsi_filter_order)
 
-						}}>{item}</div>
+						}} >{item}</div>
 					)
 				})}
 			
@@ -276,20 +273,22 @@ const TradesTable = (props) => {
 
             <div className='Chart_Trades_Expanded'>
 
-                {allTrades[0]['tradeInfo']['id'] !== '-' ? allTrades?.map((item,index) => {
+                {allTrades[0]['tradeInfo']['id'] !== '-' ? 
 
-                        if(item.tradeInfo.tradeResult === currentFilter || currentFilter === 'All'){
-							
-                            return(<Row
+				allTrades?.map((item,index) => {
 
-								active={activeRowIndex === index ? true : false}
-								setActiveRowIndex={setActiveRowIndex}
-                                item={item} 
-                                index={index} 
-                                setTradeID={setTradeID}
-                                colorTheme={colorTheme}
+					if(item.tradeInfo.tradeResult === currentFilter || currentFilter === 'All'){
+						
+						return(<Row
+							key={item.id} // Assuming "id" is a unique identifier for each trad
+							active={activeRowIndex === index ? true : false}
+							setActiveRowIndex={setActiveRowIndex}
+							item={item} 
+							index={index} 
+							setTradeID={setTradeID}
+							colorTheme={colorTheme}
 
-                            />)}
+						/>)}
                   
                 })
 			

@@ -82,10 +82,8 @@ const Row = (props) => {
         return convertedDateString;
     }
 
-
-
     return(
-        <div className={active ? 'trade_row_on' : 'trade_row_off'} 
+        <div key={item} className={active ? 'trade_row_on' : 'trade_row_off'} 
         
         style={{ 
             backgroundColor: index % 2 === 0 ?  colorTheme.row_one_color : colorTheme.row_two_color,
@@ -93,7 +91,7 @@ const Row = (props) => {
         }}
         
         onClick={() => {setTradeID(index); setActiveRowIndex(index)}} 
-            key={index}
+            
 >
 
             <div className='result-wrapper'>

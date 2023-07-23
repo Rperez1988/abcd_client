@@ -82,7 +82,6 @@ const Settings = (props) => {
 	}
     
 
-
     return( 
         
         <div className='settings_container' style={settings_style}>

@@ -135,6 +135,7 @@ const BC_Performance = (props) => {
                 {sortedPeformances && sortedPeformances.map((item,index) => (
 
                    <BC_Performance_Row
+                        key={index}
                         active={index === selectedIndex ? true : false}
                         all_peformances={sortedPeformances}
                         item={item}

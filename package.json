@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Rperez1988.github.io/abcd_client",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,7 @@
     "apexcharts": "^3.35.5",
     "chart.js": "^3.9.1",
     "classnames": "^2.3.1",
+    "gh-pages": "^5.0.0",
     "jquery": "^3.6.0",
     "react": "^18.0.0",
     "react-apexcharts": "^1.4.0",
@@ -23,6 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "depoy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

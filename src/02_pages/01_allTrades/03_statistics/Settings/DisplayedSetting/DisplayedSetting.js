@@ -15,6 +15,7 @@ const DisplayedSetting = (props) => {
 
     const [activeDropMenu, setActiveDropMenu] = useState()
 
+    console.log(temp)
   
     return(
 

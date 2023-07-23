@@ -12,6 +12,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import Form from './Form/Form'
 import SelectedSetting from './SelectedSetting/SelectedSetting'
 import AllSavedSettingsDropDown from './AllSavedSettingsDropDown/AllSavedSettingsDropDown'
+import saveSettings from '../../../../../03_api/05_saveSettings/saveSettings'
 
 
 
@@ -53,6 +54,8 @@ const SettingOptions = (props) => {
         }
 
     }
+
+    // console.log(allSavedSettings)
 
     return(
 
@@ -101,12 +104,15 @@ const SettingOptions = (props) => {
                         <div className='edit_icon_wrapper' >
                             <img className='save_icon' src={save} 
                                 style={get_div_style(selectedSetting)}
+
                                 onClick={()=>{
                                     // edit_setting(temp, loadSettings,inputValue);
+                                    saveSettings(temp, loadSettings)
                                     setIsEdit(false)
                                     setInputValue('')
                                 }}
                             />
+
                         </div>
                     
                     </div>
