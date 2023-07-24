@@ -1566,7 +1566,6 @@ input {
         flex-direction: column;
         overflow-x: auto;
         touch-action: pan-y; 
-        -webkit-overflow-scrolling: touch; 
     }
     .single_trade_wrapper1{
         height: 50%;
