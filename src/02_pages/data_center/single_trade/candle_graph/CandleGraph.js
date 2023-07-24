@@ -39,7 +39,7 @@ const CandleGraph = (props) => {
 
     useEffect(() => {
 
-		if(allTrades.length > 0){
+		if(allTrades !== undefined){
 
 			const getAverageOfCandles = () => {
 
@@ -160,7 +160,7 @@ const CandleGraph = (props) => {
 
 				
 
-				{/* {midPriceInCandleChart && <CandleChart 
+				{midPriceInCandleChart && <CandleChart 
 					inFullScreen={inFullScreen} 
 					allTrades={allTrades[tradeIdInView]} 
 					scaledCandles={scaledCandles} 
@@ -176,7 +176,7 @@ const CandleGraph = (props) => {
 					isPriceAndDayMeasurement={isPriceAndDayMeasurement}
 					retracementMeasurement={retracementMeasurement}
 					colorTheme={colorTheme}
-				/>}  */}
+				/>} 
 				</div>
 
 		

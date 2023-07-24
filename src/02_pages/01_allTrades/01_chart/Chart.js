@@ -51,11 +51,12 @@ const Chart = (props) => {
 		colorTheme,
 		tradeIdInView,
 		selectedBC,
-		setAllTrades
+		setAllTrades,
+		all_symbols
 
     } = props
 
-	const [all_symbols, set_all_symbols] = useState([])
+
 
 	const style_settings = {
 		background: colorTheme.chart.settings,
@@ -83,29 +84,19 @@ const Chart = (props) => {
 	}	
 
 	useEffect(()=>{
-	
 
-		const uniqueSymbols = []
-
-		for (const trade of allTrades){
-			const symbol = trade.tradeInfo.symbol
-
-			if(!uniqueSymbols.includes(symbol)){
-				uniqueSymbols.push(symbol)
-			}
+		if(all_symbols){
+			set_selected_symbol(all_symbols[0])
 		}
-
-		const us = ['All Symbols', ...uniqueSymbols]
-
-		set_all_symbols(us)
 		
-		set_selected_symbol(us[0])
-	
+			
 
-	},[])
+	},[all_symbols])
+
+	console.log(all_symbols)
+
 
 	const [loading, setLoading] = useState(false);
-
 
     return(
 
@@ -143,7 +134,7 @@ const Chart = (props) => {
 	
 			</div>
 
-			<div className='chart-settings2' style={{background: 'rgb(17 36 62)', color: "white"}}>
+			{/* <div className='chart-settings2' style={{background: 'rgb(17 36 62)', color: "white"}}>
 
 				<div className='trades_search_container'>
 
@@ -239,9 +230,9 @@ const Chart = (props) => {
 
 						</div>
 							
-						<div className={selected_symbol_index === all_symbols.length - 1 ? 'search_button_active'  : "search_button_"}>
+						<div className={selected_symbol_index === all_symbols?.length - 1 ? 'search_button_active'  : "search_button_"}>
 
-						<img className={selected_symbol_index === all_symbols.length -1 ? 'search_button_icon_active'  : "search_button_icon"} src={right_arrow}
+						<img className={selected_symbol_index === all_symbols?.length -1 ? 'search_button_icon_active'  : "search_button_icon"} src={right_arrow}
 							
 							onMouseDown ={async () => {
 					
@@ -295,7 +286,8 @@ const Chart = (props) => {
 							
 			</div>
 		    
-			<div className="loading">{loading ? 'Loading...' : ''}</div>
+			<div className="loading">{loading ? 'Loading...' : ''}</div> */}
+
 			<TradesTable 
 				allTrades={allTrades}
 		

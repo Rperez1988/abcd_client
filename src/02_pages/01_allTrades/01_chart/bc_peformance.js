@@ -17,7 +17,7 @@ const BC_Performance = (props) => {
         setTradeIdInView,
         setSelectedBC,
         colorTheme,
-        index
+        allTrades
     } = props
 
 
@@ -121,32 +121,38 @@ const BC_Performance = (props) => {
 
             <div className='cd_selection_on'>
 
-            <div className='no_trades'>No Trades</div> 
-                        
-                {sortedPeformances && sortedPeformances.map((item,index) => (
+                {allTrades === undefined && <div className='no_trades'>No Trades</div>} 
 
-                   <BC_Performance_Row
-                        key={index}
-                        active={index === selectedIndex ? true : false}
-                        all_peformances={sortedPeformances}
-                        item={item}
-                        fetchData={fetchData}
-                        access_trades={access_trades}
-                        setAllTrades={setAllTrades}
-                        get_selected_trades={get_selected_trades}
-                        index={index}
-                        set_active_bc_peformance={set_active_bc_peformance}
-                        setTradeIdInView={setTradeIdInView} 
-                        setSelectedBC={setSelectedBC}
-                        set_bc_tab={set_bc_tab}
-                        colorTheme={colorTheme}
-                        setSelectedIndex={setSelectedIndex}
-                    />
+                {allTrades !== undefined && 
+                
+                sortedPeformances && sortedPeformances.map((item,index) => (
 
-      
-
-
-                ))}
+                    <BC_Performance_Row
+                         key={index}
+                         active={index === selectedIndex ? true : false}
+                         all_peformances={sortedPeformances}
+                         item={item}
+                         fetchData={fetchData}
+                         access_trades={access_trades}
+                         setAllTrades={setAllTrades}
+                         get_selected_trades={get_selected_trades}
+                         index={index}
+                         set_active_bc_peformance={set_active_bc_peformance}
+                         setTradeIdInView={setTradeIdInView} 
+                         setSelectedBC={setSelectedBC}
+                         set_bc_tab={set_bc_tab}
+                         colorTheme={colorTheme}
+                         setSelectedIndex={setSelectedIndex}
+                     />
+ 
+       
+ 
+ 
+                 ))
+                
+                
+                }    
+            
 
             </div>
         

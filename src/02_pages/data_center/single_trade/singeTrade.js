@@ -74,6 +74,7 @@ const SingleTrade = (props) => {
 						setTradeIdInView={setTradeIdInView}
 						setSelectedBC={setSelectedBC}
 						colorTheme={colorTheme}
+						allTrades={allTrades}
 					/> 
 					
 				</div>

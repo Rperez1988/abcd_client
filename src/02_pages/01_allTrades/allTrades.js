@@ -563,9 +563,9 @@ const get_number_of_pivots = (objectList) => {
 	}
 	return uniquePivotNumbers
 }
-const get_all_data_from_django = async (loadSettings, setAllTrades) => {
+const get_all_data_from_django = async (loadSettings, setAllTrades, set_all_symbols) => {
 
-	await getActiveTrades(setAllTrades)
+	await getActiveTrades(setAllTrades, set_all_symbols)
 	await createStatistics()
 	await loadSettings()
 	// let result = await getStatistics()
@@ -580,7 +580,7 @@ const DataCentral = (props) => {
 		colorTheme,
 	} = props
 
-	const [allTrades, setAllTrades] = useState([])
+	const [allTrades, setAllTrades] = useState()
 	const [tradeIdInView, setTradeIdInView] = useState(0)
 	const [isTradeBeingViewed, setIsTradeBeingViewd] = useState()
 	const [allSavedSettings, setAllSavedSettings] = useState()
@@ -592,12 +592,13 @@ const DataCentral = (props) => {
 	const [unRealizedReturnTab, setUnRealizedReturnTab] = useState(false)
 	const [selectedInfoPage, setSelectedInfoPage] = useState('Trades')
 	const [selectedBC, setSelectedBC] = useState()
+	const [all_symbols, set_all_symbols] = useState()
 	
 
 
 	useEffect(() => {
 		loadSettings()
-		get_all_data_from_django(loadSettings, setAllTrades)
+		get_all_data_from_django(loadSettings, setAllTrades, set_all_symbols)
 	},[]);
 
 	const handle_info_page_selected = (tab) => {
@@ -725,11 +726,14 @@ const DataCentral = (props) => {
 				setSelectedInfoPage={setSelectedInfoPage}
 				settingsIcon={settingsIcon}
 				typesIcon={typesIcon}
+				all_symbols={all_symbols}
 		/>
 		}
 
 
 	}
+
+	console.log(all_symbols)
 
 	return (
 		

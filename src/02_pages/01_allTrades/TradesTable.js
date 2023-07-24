@@ -237,9 +237,9 @@ const TradesTable = (props) => {
 
     return(
 
-        <>
+        <div className='trades_table_container'>
 
-  
+
 
         	<div className='Chart_Header' 
 			        
@@ -273,10 +273,10 @@ const TradesTable = (props) => {
 
             <div className='Chart_Trades_Expanded'>
 				
-				{allTrades.length === 0 && <div className='no_trades'>No Trades</div> }
+				{allTrades === undefined && <div className='no_trades'>No Trades</div> }
 				
 				
-				{allTrades.length > 0 && 
+				{allTrades !== undefined && 
 				
 					allTrades?.map((item,index) => {
 
@@ -299,7 +299,7 @@ const TradesTable = (props) => {
 
             </div>
         
-        </>
+        </div>
 
      
     )

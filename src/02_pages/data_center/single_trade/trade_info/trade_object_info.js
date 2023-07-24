@@ -16,7 +16,7 @@ const TradeObjectInfo = (props) => {
             
             <TradeObjectSingleInfo 
                 colorTheme={colorTheme} 
-                mappingObject={allTrades.length > 0 ? allTrades[tradeIdInView]['tradeInfo'] : []}
+                mappingObject={allTrades !== undefined ? allTrades[tradeIdInView]['tradeInfo'] : []}
                 filter={'abcd_volumes'}
                 header={'General'}
             />

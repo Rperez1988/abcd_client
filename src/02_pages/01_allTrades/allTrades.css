@@ -24,8 +24,11 @@
     box-sizing: border-box;
     height: 100%;
     width: 100%;
-
+    /* border: 5px solid yellow; */
+    display: flex;
+    flex-direction: column;
 }
+
 
 
 
@@ -625,7 +628,7 @@
 }
 .cd_settings{
     width: 100%;
-    height: 30px;
+    height: 2.5%;
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -848,19 +851,14 @@
   }
 .Chart_Main{
     box-sizing: border-box;
-    /* height: 95%;
-    width: 98%; */
-    /* height: 100%; */
+    height: 97.5%;
     width: 100%;
-    margin: auto;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    /* margin-bottom: 10px; */
-    /* border-radius: 1%;
-    border: px solid white; */
     font-family: 'PT Sans Narrow', sans-serif;
     color: black;
+    /* border: 2px solid white; */
 
     
 }
@@ -875,9 +873,10 @@
     color: white;
     font-size: 100%;
     /* border: 1px solid red; */
-    height: 50px;
+    height: 5%;
     padding-top: 10px;
     padding-bottom: 10px;
+    box-sizing: border-box;
    
 }
 .chart-settings2{
@@ -959,9 +958,7 @@
     font-family: 'PT Sans Narrow', sans-serif;
 }
 .Chart_Header{
-    /* min-height: 35px;
-    max-height: 35px; */
-    height: 30px;
+    height: 5%;
     width: 100%;
     margin: auto;
     display: flex;
@@ -969,8 +966,17 @@
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 85%;
     background-color: black;
+    box-sizing: border-box;
     
 }
+.trades_table_container{
+    box-sizing: border-box;
+
+    height: 95%;
+    width: 100%;
+    /* border: 5px solid green; */
+}
+
 
 
 
@@ -1006,17 +1012,13 @@
 }
 
 .Chart_Trades_Expanded{
-    height: 100%;
+    height: 95%;
+
     overflow-y: scroll;
-    /* overflow-x: hidden; */
     transition: all .5s ease;
     background-color: rgb(8, 20, 36);
-    min-height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
 
-    /* background-color: 'linear-gradient(to right,  rgb(8,20,36),  rgb(3, 22, 31), rgb(8,20,36), rgba(255,0,0,0))', */
     
 }
 .Chart_Trades_Collapsed{
@@ -1636,6 +1638,18 @@ input {
     .settings_column{
         width: 90%;
         margin: 5px;
+    }
+    .trade_row_on{
+        font-size: 65%;
+    }
+    .trade_row_off{
+        font-size: 65%;
+    }
+    .peformance_row_off{
+        font-size: 65%;
+    }
+    .peformance_row_on{
+        font-size: 65%;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
