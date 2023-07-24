@@ -1565,6 +1565,7 @@ input {
     .allTrades_body{
         flex-direction: column;
         overflow: scroll;
+        overflow-y: scroll;
     }
     .single_trade_wrapper1{
         height: 50%;
