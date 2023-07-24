@@ -580,7 +580,7 @@ const DataCentral = (props) => {
 		colorTheme,
 	} = props
 
-	const [allTrades, setAllTrades] = useState()
+	const [allTrades, setAllTrades] = useState([])
 	const [tradeIdInView, setTradeIdInView] = useState(0)
 	const [isTradeBeingViewed, setIsTradeBeingViewd] = useState()
 	const [allSavedSettings, setAllSavedSettings] = useState()
@@ -708,7 +708,7 @@ const DataCentral = (props) => {
 				loadSettings={loadSettings}
 			/>
 			case 'Trades': 
-				return allTrades && <Chart 
+				return <Chart 
 				number_of_pivots={number_of_pivots}
 				all_trades_length={allTrades?.length}
 				colorTheme={colorTheme} 
@@ -735,7 +735,7 @@ const DataCentral = (props) => {
 		
 		<div className='allTrades_body'> 
 
-			{allTrades?.length >= 1 && <SingleTrade 
+			{ <SingleTrade 
 				browseChartsRight={browseChartsRight} 
 				browseChartsLeft={browseChartsLeft} 
 				setTradeIdInView={setTradeIdInView} 

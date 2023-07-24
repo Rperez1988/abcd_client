@@ -39,9 +39,13 @@ const CandleGraph = (props) => {
 
     useEffect(() => {
 
+		if(allTrades.length > 0){
+
 			const getAverageOfCandles = () => {
 
 				let avg = []
+
+				
 				allTrades[tradeIdInView]['chartData'].forEach(item => {	
 					avg.push(parseFloat(item['High'])) 
 					avg.push(parseFloat(item['Close']))
@@ -104,6 +108,9 @@ const CandleGraph = (props) => {
 			setScaledCandles(candles)
 			setHighAndLowDistanceApart(highAndLowDistanceApart)
 			setMidPriceInCandleChart(midPriceInCandleChart)
+
+		}
+			
 	
 	},[allTrades, tradeIdInView])
 
@@ -115,17 +122,13 @@ const CandleGraph = (props) => {
 			<div className="left_">
 				<div className="trades_object_info_wrapper"  style={{background: colorTheme.primary_color}}>
 
-
-
-
-
-				<TradeObjectInfo 
-					allTrades={allTrades}
-					colorTheme={colorTheme}
-					tradeIdInView={tradeIdInView}
-			
-				/>
-</div>
+					<TradeObjectInfo 
+						allTrades={allTrades}
+						colorTheme={colorTheme}
+						tradeIdInView={tradeIdInView}
+					/>
+					
+				</div>
 			</div>
 
 			<div className="right_">
@@ -160,7 +163,7 @@ const CandleGraph = (props) => {
 
 			
 
-			{midPriceInCandleChart && <CandleChart 
+			{/* {midPriceInCandleChart && <CandleChart 
 				inFullScreen={inFullScreen} 
 				allTrades={allTrades[tradeIdInView]} 
 				scaledCandles={scaledCandles} 
@@ -176,7 +179,7 @@ const CandleGraph = (props) => {
 				isPriceAndDayMeasurement={isPriceAndDayMeasurement}
 				retracementMeasurement={retracementMeasurement}
 				colorTheme={colorTheme}
-			/>} 
+			/>}  */}
 			</div>
 
 		

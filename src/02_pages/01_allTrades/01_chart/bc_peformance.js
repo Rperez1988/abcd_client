@@ -86,9 +86,7 @@ const BC_Performance = (props) => {
     
     return(
 
-        <div className="cd_selection_container" 
-        
-        >
+        <div className="cd_selection_container" >
 
             <div className="cd_settings" 
             
@@ -108,14 +106,7 @@ const BC_Performance = (props) => {
                 </div>
             </div>
 
-            <div className="cd_selection_" 
-            
-            style={{background: 'rgb(17 36 62)',
-            color: "white"
-        
-        }}
-            
-            >
+            <div className="cd_selection_" style={{background: 'rgb(17 36 62)',color: "white"}}>
                 <div className="peformance_row_off">
 
                     {bc_header.map((item,index) => {
@@ -129,9 +120,9 @@ const BC_Performance = (props) => {
             </div>
 
             <div className='cd_selection_on'>
-                
-                
-                
+
+            <div className='no_trades'>No Trades</div> 
+                        
                 {sortedPeformances && sortedPeformances.map((item,index) => (
 
                    <BC_Performance_Row

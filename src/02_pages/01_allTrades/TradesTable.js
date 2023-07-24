@@ -272,34 +272,30 @@ const TradesTable = (props) => {
 			</div>
 
             <div className='Chart_Trades_Expanded'>
-
-                {allTrades[0]['tradeInfo']['id'] !== '-' ? 
-
-				allTrades?.map((item,index) => {
-
-					if(item.tradeInfo.tradeResult === currentFilter || currentFilter === 'All'){
-						
-						return(<Row
-							key={item.id} // Assuming "id" is a unique identifier for each trad
-							active={activeRowIndex === index ? true : false}
-							setActiveRowIndex={setActiveRowIndex}
-							item={item} 
-							index={index} 
-							setTradeID={setTradeID}
-							colorTheme={colorTheme}
-
-						/>)}
-                  
-                })
-			
-			
-			:
-			
-			<div className='no_trades'>No Trades</div> 
-			}
-
 				
+				{allTrades.length === 0 && <div className='no_trades'>No Trades</div> }
+				
+				
+				{allTrades.length > 0 && 
+				
+					allTrades?.map((item,index) => {
 
+						if(item.tradeInfo.tradeResult === currentFilter || currentFilter === 'All'){
+							
+							return(<Row
+								key={item.id} // Assuming "id" is a unique identifier for each trad
+								active={activeRowIndex === index ? true : false}
+								setActiveRowIndex={setActiveRowIndex}
+								item={item} 
+								index={index} 
+								setTradeID={setTradeID}
+								colorTheme={colorTheme}
+
+							/>)}
+					
+					})
+				
+				}
 
             </div>
         

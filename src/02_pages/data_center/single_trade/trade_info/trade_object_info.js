@@ -10,20 +10,17 @@ const TradeObjectInfo = (props) => {
         tradeIdInView
     } = props
 
-    // console.log(allTrades[tradeIdInView]['tradeInfo'])
-    // console.log(allTrades[tradeIdInView])
-
     return(
 
         <div className='single_trade_information' style={colorTheme.single_trade.trade_info.main}>
             
             <TradeObjectSingleInfo 
                 colorTheme={colorTheme} 
-                mappingObject={allTrades[tradeIdInView]['tradeInfo']}
+                mappingObject={allTrades.length > 0 ? allTrades[tradeIdInView]['tradeInfo'] : []}
                 filter={'abcd_volumes'}
                 header={'General'}
             />
-             <TradeObjectSingleInfo 
+             {/* <TradeObjectSingleInfo 
                 colorTheme={colorTheme} 
                 mappingObject={allTrades[tradeIdInView]['enterExitInfo']}
                 filter={'abcd_volumes'}
@@ -34,7 +31,7 @@ const TradeObjectInfo = (props) => {
                 mappingObject={allTrades[tradeIdInView]['pnl']}
                 filter={'abcd_volumes'}
                 header={'PNL'}
-            />      
+            />       */}
 
 
 {/* 
