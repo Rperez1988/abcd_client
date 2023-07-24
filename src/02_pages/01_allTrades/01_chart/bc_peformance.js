@@ -23,7 +23,7 @@ const BC_Performance = (props) => {
 
     const [bc_tab_open, set_bc_tab] = useState(true)
     const [active_bc_peformance, set_active_bc_peformance] = useState()
-    const bc_header = ['BC', 'Trades', 'Wins', 'Lost', 'Win Pct','LPD','APD','RSI WR', 'Vol WR','Vol LR', 'Avg Length W', 'Avg Length L']
+    const bc_header = ['BC', 'Trades', 'Wins', 'Lost', 'Win Pct','LPD','APD','RSI WR', 'Vol WR','Vol LR', 'Avg Len W', 'Avg Len L']
     const [columnSelected, setColumnSelected] = useState()
     const [sortedPeformances, setSortedPeformances] = useState()
     const [selectedIndex, setSelectedIndex] = useState(0)

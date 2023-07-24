@@ -118,7 +118,6 @@ const CandleGraph = (props) => {
 
         <div className='candle_chart_'>
 
-
 			<div className="left_">
 				<div className="trades_object_info_wrapper"  style={{background: colorTheme.primary_color}}>
 
@@ -132,58 +131,56 @@ const CandleGraph = (props) => {
 			</div>
 
 			<div className="right_">
+					
+				<div className="trades_object_info_wrapper"  style={{background: colorTheme.primary_color}}>
+
+				<NavBar
+					turnOverLayOff={turnOverLayOff}
+					setIsTradeBeingViewd={setIsTradeBeingViewd}
+					isTradeBeingViewed={isTradeBeingViewed}
+					allTrades={allTrades}
+					tradeIdInView={tradeIdInView}
+					browseChartsLeft={browseChartsLeft}
+					setIsAtEndOfTrades={setIsAtEndOfTrades}
+					setIsAtStartOfTrades={setIsAtStartOfTrades}
+					browseChartsRight={browseChartsRight}
+					isAtStartOfTrades={isAtStartOfTrades}
+					isAtEndOfTrades={isAtEndOfTrades}
+					setInFullScreen={setInFullScreen}
+					inFullScreen={inFullScreen}
+					colorTheme={colorTheme}
+					setIsABCD={setIsABCD}
+					isABCD={isABCD}
+					retracementMeasurement={retracementMeasurement}
+					setIsRetracementMeasurement={setIsRetracementMeasurement}
+					isCandles={isCandles}
+					setIsCandles={setIsCandles}
+				/>
+
+
 				
-			<div className="trades_object_info_wrapper"  style={{background: colorTheme.primary_color}}>
 
-
-
-			<NavBar
-                turnOverLayOff={turnOverLayOff}
-                setIsTradeBeingViewd={setIsTradeBeingViewd}
-                isTradeBeingViewed={isTradeBeingViewed}
-                allTrades={allTrades}
-                tradeIdInView={tradeIdInView}
-                browseChartsLeft={browseChartsLeft}
-                setIsAtEndOfTrades={setIsAtEndOfTrades}
-                setIsAtStartOfTrades={setIsAtStartOfTrades}
-                browseChartsRight={browseChartsRight}
-                isAtStartOfTrades={isAtStartOfTrades}
-                isAtEndOfTrades={isAtEndOfTrades}
-                setInFullScreen={setInFullScreen}
-                inFullScreen={inFullScreen}
-                colorTheme={colorTheme}
-				setIsABCD={setIsABCD}
-				isABCD={isABCD}
-				retracementMeasurement={retracementMeasurement}
-				setIsRetracementMeasurement={setIsRetracementMeasurement}
-				isCandles={isCandles}
-				setIsCandles={setIsCandles}
-            />
-
-
-			
-
-			{/* {midPriceInCandleChart && <CandleChart 
-				inFullScreen={inFullScreen} 
-				allTrades={allTrades[tradeIdInView]} 
-				scaledCandles={scaledCandles} 
-				highAndLowDistanceApart={highAndLowDistanceApart} 
-				midPriceInCandleChart={midPriceInCandleChart}
-				isCandles={isCandles}
-				isABCD={isABCD} 
-				isRR={isRR} 
-				isSR={isSR} 
-				isA={isA}
-				isB={isB}
-				isFibRetracement={isFibRetracement}
-				isPriceAndDayMeasurement={isPriceAndDayMeasurement}
-				retracementMeasurement={retracementMeasurement}
-				colorTheme={colorTheme}
-			/>}  */}
-			</div>
+				{/* {midPriceInCandleChart && <CandleChart 
+					inFullScreen={inFullScreen} 
+					allTrades={allTrades[tradeIdInView]} 
+					scaledCandles={scaledCandles} 
+					highAndLowDistanceApart={highAndLowDistanceApart} 
+					midPriceInCandleChart={midPriceInCandleChart}
+					isCandles={isCandles}
+					isABCD={isABCD} 
+					isRR={isRR} 
+					isSR={isSR} 
+					isA={isA}
+					isB={isB}
+					isFibRetracement={isFibRetracement}
+					isPriceAndDayMeasurement={isPriceAndDayMeasurement}
+					retracementMeasurement={retracementMeasurement}
+					colorTheme={colorTheme}
+				/>}  */}
+				</div>
 
 		
-		</div>
+			</div>
 
 		</div>
 

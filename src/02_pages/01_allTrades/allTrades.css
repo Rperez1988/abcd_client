@@ -9,16 +9,11 @@
     box-sizing: border-box;
 }
 
-
-/* Statistics */
-
 .statistics-collapsed{
     box-sizing: border-box;
     display: flex;
     width: 40%;
     flex-direction: column;
-    /* border: 1px solid white; */
-    overflow: hidden;
     padding: 10px;
     padding-left: 5px;
 
@@ -26,19 +21,16 @@
     
 }
 .statistics_wrapper_{
-    /* padding: 10rem; */
-    /* border: 5px solid #555555; */
-    /* border-left: 2.5px solid #555555; */
     box-sizing: border-box;
-    /* border-radius: 10px; */
     height: 100%;
     width: 100%;
-    overflow: hidden;
-    
-    /* border-radius: 10px; */
-    /* background-color: rgb(8, 9, 21); */
 
 }
+
+
+
+/* Statistics */
+
 
   .side_bar_candle_chart_wrapper{
     box-sizing: border-box;
@@ -47,81 +39,6 @@
     display: flex;
     flex-direction: row;
 }
-
-/* 
-@media only screen and (min-width:1900px) and (max-width: 2000px) {
-
-    .allTrades_body{
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        border: 3px solid white;
-        flex-direction: row;
-        
-    }
-    .chart-collapsed{
-        box-sizing: border-box;
-        width: 50%;
-        height: 100%;
- 
-    }
-    .statistics-collapsed{
-        box-sizing: border-box;
-        width: 500%;
-        height: 100%;
-
-        
-    }
-    .single_trade_information {
-       height: 50%;
-      }
-      
-      .side_bar_candle_chart_wrapper{
-      
-        height: 50%;
-    
-    }
-}    */
-
-/* 
-@media only screen and (min-width:11px) and (max-width: 9999px) {
-
-.allTrades_body{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-
-}
-.chart-collapsed{
-    box-sizing: border-box;
-    width: 100%;
-    height: 50%;
-    max-height: 50%;
-
-}
-.statistics-collapsed{
-    box-sizing: border-box;
-    width: 100%;
-    height: 50%;
-
-    
-}
-.single_trade_information {
-   height: 50%;
-  }
-  
-  .side_bar_candle_chart_wrapper{
-  
-    height: 50%;
-
-}
-
-
-
-
-
-} */
-
 
 .isSettings{
     position: absolute;
@@ -314,9 +231,7 @@
     flex-direction: column;
     height: 100%;
     width: 60%;
-    min-width: 60%;
-    max-width: 60%;
-    overflow: hidden;
+  
     /* border: 1px solid red; */
     padding-left: 10px;
     padding-right: 5px;
@@ -327,7 +242,6 @@
     width: 100%;
     height: 50%;
     max-height: 50%;
-    overflow: hidden;
 
 
     /* border: 5px solid blue; */
@@ -343,7 +257,6 @@
     width: 100%;
     height: 50%;
     max-height: 50%;
-    overflow: hidden;
 
 
     /* border: 5px solid blue; */
@@ -378,7 +291,6 @@
     width: 80%;
     height: 100%;
 
-    overflow: hidden;
  
     /* border: 1px solid #ff0a0a; */
 
@@ -401,6 +313,7 @@
 .trades_object_info_wrapper{
     width: 100%;
     height: 100%;
+    /* min-height: 500px; */
     /* border: 1px solid white; */
 }
 
@@ -577,7 +490,6 @@
     left: 0;
     background-color: black(0,0,0);
     background-color: rgba(0,0,0, 0.9);
-    overflow: hidden;
     padding: 5rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -694,7 +606,7 @@
 .cd_selection_container{
     height: 100%;
     box-sizing: border-box;
-    overflow: hidden;
+ 
 
 }
 .cd_selection_{
@@ -938,7 +850,7 @@
     box-sizing: border-box;
     /* height: 95%;
     width: 98%; */
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
     margin: auto;
     overflow-x: hidden;
@@ -968,6 +880,19 @@
     padding-bottom: 10px;
    
 }
+.chart-settings2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: white;
+    font-size: 100%;
+    /* border: 1px solid red; */
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   
+}
 .settings_column{
     box-sizing: border-box;
     height: 100%;
@@ -979,8 +904,7 @@
     margin-right: 10px;
     font-size: 100%;
     width: 100%;
-    background-color: rgb(37, 71, 89);
-    border-radius: 10px;
+    background: rgb(34, 60, 96);
 }
 .settings_column_row_header{
     width: 100%;
@@ -992,6 +916,7 @@
     font-family: 'PT Sans Narrow', sans-serif;
     color: rgb(192, 192, 192);
     font-weight: bolder;
+    background-color: black;
 }
 .settings_column_row{
     width: 100%;
@@ -1086,6 +1011,10 @@
     /* overflow-x: hidden; */
     transition: all .5s ease;
     background-color: rgb(8, 20, 36);
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     /* background-color: 'linear-gradient(to right,  rgb(8,20,36),  rgb(3, 22, 31), rgb(8,20,36), rgba(255,0,0,0))', */
     
@@ -1627,3 +1556,78 @@ input {
     max-height: 20px;
         background: rgb(17, 36, 62);
   }
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .allTrades_body{
+        flex-direction: column;
+        overflow: scroll;
+    }
+    .single_trade_wrapper1{
+        height: 50%;
+    }
+    .SingleTrade{
+        width: 100%;
+        padding: 0px;
+        /* border: 10px solid white; */
+        min-height: 1000px;
+    }
+    .single_trade_wrapper1{
+        padding: 0%;
+    }
+    .single_trade_wrapper2{
+        padding: 0%;
+    }
+    .peformance_option_header{
+        font-size: 70%;
+    }
+    .candle_chart_{
+        flex-direction: column;
+        /* border: 10px solid red; */
+    
+    }
+    .left_{
+        width: 100%;
+        padding-right: 0px;
+        /* padding-bottom: 5px; */
+        height: 30%;
+        max-height: 30%;
+        min-height: 30%;
+    }
+    .right_{
+        width: 100%;
+        padding-left: 0px;
+        /* padding-top: 5px; */
+        height: 70%;
+        max-height: 70%;
+        min-height: 70%;
+    }
+    .statistics-collapsed{
+        width: 100%;
+        padding: 0px;
+        /* border: 10px solid red; */
+        height: 100%;
+        max-height: 100%;
+    }
+    .settings_column{
+        margin: 0%;
+    }
+    .chart-settings{
+        flex-direction: column;
+        height: 250px;
+    }
+    .trades_search_container{
+        width: 100%;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
