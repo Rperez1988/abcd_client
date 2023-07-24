@@ -1564,8 +1564,8 @@ input {
 
     .allTrades_body{
         flex-direction: column;
-        overflow-x: auto;
-        touch-action: pan-y; 
+        overflow-x:hidden;
+        
     }
     .single_trade_wrapper1{
         height: 50%;
@@ -1583,7 +1583,7 @@ input {
         padding: 0%;
     }
     .peformance_option_header{
-        font-size: 70%;
+        font-size: 50%;
     }
     .candle_chart_{
         flex-direction: column;
@@ -1622,6 +1622,20 @@ input {
     }
     .trades_search_container{
         width: 100%;
+    }
+    .Chart_Header {
+        font-size: 50%;
+    }
+    .no_trades{
+        font-size: 100%;
+    }
+    .chart-settings{
+        justify-content: center;
+        align-items: center;
+    }
+    .settings_column{
+        width: 90%;
+        margin: 5px;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
