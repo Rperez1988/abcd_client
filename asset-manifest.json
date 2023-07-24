@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/abcd_client/static/css/main.26bc0963.css",
-    "main.js": "/abcd_client/static/js/main.1450e323.js",
+    "main.css": "/abcd_client/static/css/main.9b685af7.css",
+    "main.js": "/abcd_client/static/js/main.d5a6ec9f.js",
     "static/media/bull.png": "/abcd_client/static/media/bull.5a5a88f6bed95d7ea910.png",
     "static/media/bear.png": "/abcd_client/static/media/bear.fa36f49212af02911f8e.png",
     "static/media/options.png": "/abcd_client/static/media/options.0ac67d68532cb3983343.png",
     "static/media/forex.png": "/abcd_client/static/media/forex.e5f865a09a33f05b42fa.png",
     "static/media/line.png": "/abcd_client/static/media/line.8b8f44813bd878ca08ed.png",
     "index.html": "/abcd_client/index.html",
-    "main.26bc0963.css.map": "/abcd_client/static/css/main.26bc0963.css.map",
-    "main.1450e323.js.map": "/abcd_client/static/js/main.1450e323.js.map"
+    "main.9b685af7.css.map": "/abcd_client/static/css/main.9b685af7.css.map",
+    "main.d5a6ec9f.js.map": "/abcd_client/static/js/main.d5a6ec9f.js.map"
   },
   "entrypoints": [
-    "static/css/main.26bc0963.css",
-    "static/js/main.1450e323.js"
+    "static/css/main.9b685af7.css",
+    "static/js/main.d5a6ec9f.js"
   ]
 }
