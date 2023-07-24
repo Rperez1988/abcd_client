@@ -1565,8 +1565,9 @@ input {
     .allTrades_body{
         flex-direction: column;
 
-        overflow-y: scroll;
-        touch-action: none;
+        overflow-x: auto; /* Enable horizontal overflow for your specific div */
+        touch-action: pan-y; /* Disable horizontal touch interactions */
+        -webkit-overflow-scrolling: touch; /* Optional: Enable smooth scrolling
     }
     .single_trade_wrapper1{
         height: 50%;
