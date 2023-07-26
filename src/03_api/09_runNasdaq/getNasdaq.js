@@ -3,7 +3,7 @@ import config from '../../config.json'
 const getNasdaqCandles = async (length, stockActive, plBelowPh, PHtoPLLength, pLtoShortLength, marketType, selectedRunStrategy) => {
     
     try {
-        await fetch(`http://${config.server}/getNasdaqCandles`, {
+        await fetch(`${config.server}/getNasdaqCandles`, {
         method: 'POST',
         headers: {},
         body: JSON.stringify({

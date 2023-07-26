@@ -2,7 +2,7 @@ import config from '../../config.json'
 
 const getCryptoCandles = async (length, stockActive, plBelowPh, PHtoPLLength, pLtoShortLength, marketType, selectedRunStrategy) => {
     try {
-        await fetch(`http://${config.server}/getCryptoCandles`, {
+        await fetch(`${config.server}/getCryptoCandles`, {
         method: 'POST',
         headers: {},
         body: JSON.stringify({

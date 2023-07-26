@@ -3,7 +3,7 @@ import config from '../../config.json'
 const getSingleStockCandles = async (settings) => {
 
     try {
-            await fetch(`http://${config.server}/getSingleStockCandles`, {
+            await fetch(`${config.server}/getSingleStockCandles`, {
             method: 'POST',
             headers: {},
             body: JSON.stringify({

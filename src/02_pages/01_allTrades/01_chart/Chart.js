@@ -16,7 +16,7 @@ const server_filter_trades_by_symbol = async (symbol) => {
 
 	console.log('symbol',symbol)
 	try{
-		await fetch(`http://${config.server}/access_trades/get_trades_of_selected_symbol`, {
+		await fetch(`${config.server}/access_trades/get_trades_of_selected_symbol`, {
 			method: 'POST',
 			headers: {},
 			body: JSON.stringify({
@@ -32,7 +32,7 @@ const server_filter_trades_by_symbol = async (symbol) => {
 const get_selected_trades = async (setAllTrades) => {
 
 	try {
-		const res = await fetch(`http://${config.server}/access_trades/access_filtered`);
+		const res = await fetch(`${config.server}/access_trades/access_filtered`);
 
 		const result = await res.json();
 	

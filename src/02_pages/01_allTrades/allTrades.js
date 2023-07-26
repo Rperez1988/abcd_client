@@ -59,7 +59,7 @@ const access_trades = async (server, selected_bc, selected_cd) => {
 const get_selected_trades = async (setAllTrades) => {
 
 	try {
-		const res = await fetch(`http://${config.server}/access_trades/access_filtered`);
+		const res = await fetch(`${config.server}/access_trades/access_filtered`);
 
 
 		const result = await res.json();
@@ -677,7 +677,7 @@ const DataCentral = (props) => {
 
 			try {
 
-				const res = await fetch(`http://${config.server}/access_trades/access_peformance`);
+				const res = await fetch(`${config.server}/access_trades/access_peformance`);
 
 				const result = await res.json();
 	

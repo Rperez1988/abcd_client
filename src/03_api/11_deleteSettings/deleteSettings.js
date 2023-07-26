@@ -8,7 +8,7 @@ const deleteHistory = async (id, loadSettings,allSavedSettings) => {
     let last_setting_id = filteredList[filteredList.length - 1].id
     
     try{
-        await fetch(`http://${config.server}/settings/delete`, {
+        await fetch(`${config.server}/settings/delete`, {
             method: 'POST',
             headers: {},
             body: JSON.stringify({

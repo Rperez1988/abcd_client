@@ -6,7 +6,7 @@ const editSetting = async (temp,loadSettings,inputValue) => {
     // temp['settingsName'] = inputValue
     
     try{
-        await fetch(`http://${config.server}/settings/updateAndSave`, {
+        await fetch(`${config.server}/settings/updateAndSave`, {
             method: 'POST',
             headers: {},
             body: JSON.stringify({

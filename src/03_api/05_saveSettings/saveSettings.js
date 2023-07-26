@@ -4,7 +4,7 @@ const saveSettings = async (settings, loadSettings) => {
 
 
     try{
-        await fetch(`http://${config.server}/settings/save`, {
+        await fetch(`${config.server}/settings/save`, {
         method: 'POST',
         headers: {},
         body: JSON.stringify({

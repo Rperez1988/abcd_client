@@ -4,7 +4,7 @@ const updateSelectedSetting = async (previousID, newID, loadSettings) => {
 
 
     try{
-        await fetch(`'http://${config.server}/settings/updateSelectedSetting`, {
+        await fetch(`${config.server}/settings/updateSelectedSetting`, {
             method: 'POST',
             headers: {},
             body: JSON.stringify({
