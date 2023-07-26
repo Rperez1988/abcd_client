@@ -1,7 +1,9 @@
+import config from '../../config.json'
+
 const getSingleStockCandles = async (settings) => {
 
     try {
-            await fetch('http://192.168.1.189:8000/getSingleStockCandles', {
+            await fetch(`http://${config.server}/getSingleStockCandles`, {
             method: 'POST',
             headers: {},
             body: JSON.stringify({

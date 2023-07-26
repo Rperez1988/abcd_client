@@ -1,8 +1,10 @@
+import config from '../../../config.json'
+
 const updateSelectedSetting = async (previousID, newID, loadSettings) => {
 
 
     try{
-        await fetch('http://192.168.1.189:8000/settings/updateSelectedSetting', {
+        await fetch(`'http://${config.server}/settings/updateSelectedSetting`, {
             method: 'POST',
             headers: {},
             body: JSON.stringify({

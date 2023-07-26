@@ -26,21 +26,21 @@ import typesIcon  from './img/types.png'
 import settingsIcon from './img/settingswhite.png'
 import urr from './img/unRealizedReturn.png'
 import StatisticsTab from './03_statistics/StatisticsTab/StatisticsTab';
+import config from '../../config.json';
 
-
-const fetchData = async (selected_bc, selected_cd, access_trades, get_selected_trades,setAllTrades) => {
+const fetchData = async (server, selected_bc, selected_cd, access_trades, get_selected_trades,setAllTrades) => {
 			
-	await access_trades(selected_bc, selected_cd).catch(console.error);
+	await access_trades(server, selected_bc, selected_cd).catch(console.error);
 	await get_selected_trades(setAllTrades)
 	
 	// await get_peformance()
 
 }
 
-const access_trades = async (selected_bc, selected_cd) => {
+const access_trades = async (server, selected_bc, selected_cd) => {
 
 	try{
-		await fetch('http://192.168.1.189:8000/access_trades/access_trades', {
+		await fetch(server, {
 			method: 'POST',
 			headers: {},
 			body: JSON.stringify({
@@ -59,7 +59,7 @@ const access_trades = async (selected_bc, selected_cd) => {
 const get_selected_trades = async (setAllTrades) => {
 
 	try {
-		const res = await fetch('http://192.168.1.189:8000/access_trades/access_filtered');
+		const res = await fetch(`http://${config.server}/access_trades/access_filtered`);
 
 
 		const result = await res.json();
@@ -511,8 +511,6 @@ const get_selected_trades = async (setAllTrades) => {
 
 	} catch (e) { console.log(e); }
 }
-
-
 const updateSelectedSetting = (index, allSavedSettings, loadSettings, setAllSavedSettings, selectedSetting) => {
 
 	if(index === 0){
@@ -679,7 +677,7 @@ const DataCentral = (props) => {
 
 			try {
 
-				const res = await fetch('http://192.168.1.189:8000/access_trades/access_peformance');
+				const res = await fetch(`http://${config.server}/access_trades/access_peformance`);
 
 				const result = await res.json();
 	
@@ -733,8 +731,8 @@ const DataCentral = (props) => {
 
 	}
 
-	console.log(all_symbols)
-
+	
+	console.log(allTrades)
 	return (
 		
 		<div className='allTrades_body'> 

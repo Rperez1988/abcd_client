@@ -1,8 +1,10 @@
+import config from '../../config.json'
+
 const saveSettings = async (settings, loadSettings) => {
 
 
     try{
-        await fetch('http://192.168.1.189:8000/settings/save', {
+        await fetch(`http://${config.server}/settings/save`, {
         method: 'POST',
         headers: {},
         body: JSON.stringify({

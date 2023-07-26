@@ -1,3 +1,5 @@
+import config from '../../config.json'
+
 const deleteHistory = async (id, loadSettings,allSavedSettings) => {
 
 
@@ -6,7 +8,7 @@ const deleteHistory = async (id, loadSettings,allSavedSettings) => {
     let last_setting_id = filteredList[filteredList.length - 1].id
     
     try{
-        await fetch('http://192.168.1.189:8000/settings/delete', {
+        await fetch(`http://${config.server}/settings/delete`, {
             method: 'POST',
             headers: {},
             body: JSON.stringify({

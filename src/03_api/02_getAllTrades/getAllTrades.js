@@ -1,6 +1,9 @@
+import config from '../../config.json'
+
 const getActiveTrades = async (setAllTrades, set_all_symbols) => {
     try {
-        const res = await fetch('http://192.168.1.189:8000/trade/access_all_trade_models');
+        const res = await fetch(`http://${config.server}/trade/access_all_trade_models`);
+
         const result = await res.json();
         setAllTrades(result)
 

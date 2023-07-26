@@ -10,11 +10,13 @@ import StatisticsTab from "../03_statistics/StatisticsTab/StatisticsTab"
 // import '../../../../Multi-Platform.css'
 import left_arrow from './img/left.png'
 import right_arrow from './img/right.png'
+import config from '../../../config.json'
+
 const server_filter_trades_by_symbol = async (symbol) => {
 
 	console.log('symbol',symbol)
 	try{
-		await fetch('http://192.168.1.189:8000/access_trades/get_trades_of_selected_symbol', {
+		await fetch(`http://${config.server}/access_trades/get_trades_of_selected_symbol`, {
 			method: 'POST',
 			headers: {},
 			body: JSON.stringify({
@@ -30,7 +32,7 @@ const server_filter_trades_by_symbol = async (symbol) => {
 const get_selected_trades = async (setAllTrades) => {
 
 	try {
-		const res = await fetch('http://192.168.1.189:8000/access_trades/access_filtered');
+		const res = await fetch(`http://${config.server}/access_trades/access_filtered`);
 
 		const result = await res.json();
 	

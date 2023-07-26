@@ -1,10 +1,12 @@
+import config from '../../config.json'
+
 const editSetting = async (temp,loadSettings,inputValue) => {
 
     console.log(temp)
     // temp['settingsName'] = inputValue
     
     try{
-        await fetch('http://192.168.1.189:8000/settings/updateAndSave', {
+        await fetch(`http://${config.server}/settings/updateAndSave`, {
             method: 'POST',
             headers: {},
             body: JSON.stringify({
