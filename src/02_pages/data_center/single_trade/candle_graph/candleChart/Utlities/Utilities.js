@@ -1,10 +1,12 @@
-export const getStartingExpandSize = (distance, expandSize, inFullScreen) => {
+export const getStartingExpandSize = (distance, expandSize, inFullScreen, height) => {
 		
     let scale = 1
 
-    inFullScreen && (scale *= 1.5)
+    // inFullScreen && (scale *= 1.5)
     // (100  / (allTrades['chartData'].length / 10))
-    return 10000 / (distance / 4)
+    return height / (distance / 70)
+    return height * 0.7
+
 }
 export const addPercentChangeToCandles = (unAdjustedCandles, pi, pixelPoint) => {
 

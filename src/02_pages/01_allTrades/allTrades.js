@@ -731,8 +731,6 @@ const DataCentral = (props) => {
 
 	}
 
-	
-	console.log(allTrades)
 	return (
 		
 		<div className='allTrades_body'> 
@@ -753,38 +751,24 @@ const DataCentral = (props) => {
 				fetchData={fetchData}
 				access_trades={access_trades}
 				get_selected_trades={get_selected_trades}
-				
+				allSavedSettings={allSavedSettings}
+				setAllSavedSettings={setAllSavedSettings}
+				updateSelectedSetting={updateSelectedSetting}
+				loadSettings={loadSettings}
+				number_of_pivots={number_of_pivots}
+				setTradeID={setTradeID}
+				tradesTab={tradesTab}
+				setSelectedInfoPage={setSelectedInfoPage}
+				settingsIcon={settingsIcon}
+				typesIcon={typesIcon}
+				all_symbols={all_symbols}
+				selectedInfoPage={selectedInfoPage}
+						
 			/>} 
 
-					
-		<div className='statistics-collapsed'>
-			<div className='statistics_wrapper_' style={     {background: colorTheme.card_header_color}}>
-				
-				<div className="cd_settings">
-				
-				<div className="cd_icon_wrapper" onClick={() => {setSelectedInfoPage('Trades')}}>
+			<div className="single_trade_right"></div>
 
-						<img className='cd_img'src={typesIcon}/>
-				</div>
-				
-				<div className="cd_icon_wrapper"  onClick={() => {setSelectedInfoPage('Settings')}}>
-						<img className='cd_img'src={settingsIcon}/>
-				</div>
 
-            	</div>
-
-				{selected_info_page(selectedInfoPage)}
-		
-			</div>	
-		</div>
-				
-		
-	
-		
-		
-
-			
-	
 
 		</div>
 
@@ -792,10 +776,3 @@ const DataCentral = (props) => {
 }
 
 export default DataCentral;
-
-			{/* <div className='statistics-tabs' >
-					<StatisticsTab colorTheme={colorTheme} tab={tradesTab} handle_info_page_selected={setSelectedInfoPage} tabText={'Trades'} tabIcon={typesIcon}/>
-				
-					<StatisticsTab colorTheme={colorTheme} tab={settingsTab} handle_info_page_selected={setSelectedInfoPage} tabText={'Settings'} tabIcon={settingsIcon}/>
-				</div>
- */}

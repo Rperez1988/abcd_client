@@ -31,11 +31,13 @@ const CandleChart = (props) => {
 		colorTheme,
 	} = props
 	
+
+
 	const [testState, setTestState] = useState()
 	const [spaceBetweenCandles, setSpaceBetweenCandles] = useState(inFullScreen ? 5 : 5)		// Space Between Candles: Starting pixel distance between each candle.
 	const [candleWidth, setCandleWidth] = useState(inFullScreen ? 5 : 1)						// Candle Width: Starting pixel width of a candle.
 	const [spaceBetweenWicks, setSpaceBetweenWicks] = useState(7.5)							    // Space Between Wicks: Starting pixel distance between each wick.
-	const [canvasDisplayHeight, setCanvasDisplayHeight] = useState({
+ 	const [canvasDisplayHeight, setCanvasDisplayHeight] = useState({
 		'height': null,
 		'width': null,
 		'left': null, 
@@ -58,7 +60,7 @@ const CandleChart = (props) => {
 	const [isMousePressedOnPrices, setIsMousePressedOnPrices] = useState(false)
 	const [onCandle, setOnCandle] = useState(5)
 	const pixelPoint = canvasPriceDimensions['height'] / 1000
-	const [canvasXSpacing, setCanvasXSpacing] = useState(100)									// Canvas X Spacing: Pixel distance between the left side of the canvas and the left side of the starting candle.
+	const [canvasXSpacing, setCanvasXSpacing] = useState(0)									// Canvas X Spacing: Pixel distance between the left side of the canvas and the left side of the starting candle.
 	const [canvasYSpacing, setCanvasYSpacing] = useState(0)	
 	const [prevCanvasYSpacing, setPrevCanvasYSpacing] = useState(0)		
 	const [prevCanvasXSpacing, setPrevCanvasXSpacing] = useState(0)								// Previous Canvas Y Spacing: 	
@@ -94,7 +96,7 @@ const CandleChart = (props) => {
 	useEffect(()=> {
 		setCanvasYSpacing(getCanvasYSpacing(midPriceInCandleChart, canvasDisplayHeight['height'], pixelPoint))
 		setPrevCanvasYSpacing(getCanvasYSpacing(midPriceInCandleChart, canvasDisplayHeight['height'], pixelPoint))
-		setExpandSize(getStartingExpandSize(highAndLowDistanceApart, expandSize, inFullScreen))
+		setExpandSize(getStartingExpandSize(highAndLowDistanceApart, expandSize, inFullScreen,  parseFloat(canvasDisplayHeight['height'])))
 		setPreviousExpandSize(getStartingExpandSize(highAndLowDistanceApart, expandSize, inFullScreen))
 		const getStartingWidth = () => {
 			// allTrades['chartData'].length ===  20 && (x = (50 / 2))
@@ -112,13 +114,35 @@ const CandleChart = (props) => {
 
 		setCandleWidth(x)
 		setSpaceBetweenCandles(x)
-		setSpaceBetweenWicks((x / 2) + 5)
+		setSpaceBetweenWicks(((canvasDisplayHeight['width'] / 2) / 2) + 5)
 
 	
 		}
+		
 		getStartingWidth()
 		setOnCandle(0)
+		setCanvasXSpacing(canvasDisplayHeight['width'] / 4)
+		// setCanvasYSpacing(canvasDisplayHeight['height'] / 2)
+		// let quarter = canvasDisplayHeight['width'] / 4
+		// let third = quarter * 3
+		// third = third
+		function calculateCandleWidthAndSpacing(graphWidth, numCandles) {
+			const denominator = 3 * numCandles + numCandles - 1;
+			const candleWidth = graphWidth / denominator;
+			const widthBetweenCandles = graphWidth / denominator;
+			return { candleWidth, widthBetweenCandles };
+		  }
+		
+		const graphWidth = canvasDisplayHeight['width']; // Width of the graph in pixels
+		const numCandles = allTrades['chartData'].length;   // Number of candles
 
+		const { candleWidth, widthBetweenCandles } = calculateCandleWidthAndSpacing(graphWidth, numCandles);
+
+		setCandleWidth(candleWidth)
+		setSpaceBetweenWicks((candleWidth / 2) + 5)
+		setSpaceBetweenCandles(candleWidth)
+		// console.log('height',canvasDisplayHeight['height'].toFixed(2))
+		// console.log('bars',allTrades['chartData'].length, 'pixel length', (allTrades['chartData'].length * candleWidth) + (allTrades['chartData'].length * spaceBetweenCandles))
 
 	}, [scaledCandles,canvasDisplayHeight])
 	
@@ -437,6 +461,7 @@ const CandleChart = (props) => {
 	}
 
 
+	console.log(expandSize)
     return(
 		<div className='candle_chart_container'>
 

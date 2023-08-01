@@ -170,8 +170,6 @@ const TradesTable = (props) => {
 
     } = props
 
-
-
 	const [symbol_filter_order, set_symbol_filter_order] = useState(0)
 	const [pnl_filter_order, set_pnl_filter_order] = useState(0)
 	const [return_filter_order, set_return_filter_order] = useState(0)
@@ -181,7 +179,7 @@ const TradesTable = (props) => {
 	const [cd_filter_order, set_cd_filter_order] = useState(0)
 	const [rsi_filter_order, set_rsi_filter_order] = useState(0)
     const [currentFilter, setCurrentFilter] = useState('All')
-	const [activeRowIndex, setActiveRowIndex] = useState(tradeIdInView)
+	const [activeRowIndex, setActiveRowIndex] = useState()
 	
     const style_header = {
 		background: colorTheme.chart.header,
@@ -223,7 +221,6 @@ const TradesTable = (props) => {
 	},[])
 	useEffect(()=>{
 
-		
 		setActiveRowIndex(tradeIdInView)
 		
 	}, [tradeIdInView])
@@ -235,22 +232,12 @@ const TradesTable = (props) => {
 		setInputValue(event.target.value);
 	};
 
+	
     return(
 
         <div className='trades_table_container'>
 
-
-
-        	<div className='Chart_Header' 
-			        
-					style={{background: 'rgb(17 36 62)',
-					color: "white"
-				
-				}}
-					
-			
-			
-			>
+        	<div className='Chart_Header'>
 				{header.map((item,index) => {
 					return(	
 
@@ -274,8 +261,7 @@ const TradesTable = (props) => {
             <div className='Chart_Trades_Expanded'>
 				
 				{allTrades === undefined && <div className='no_trades'>No Trades</div> }
-				
-				
+			
 				{allTrades !== undefined && 
 				
 					allTrades?.map((item,index) => {
@@ -283,7 +269,7 @@ const TradesTable = (props) => {
 						if(item.tradeInfo.tradeResult === currentFilter || currentFilter === 'All'){
 							
 							return(<Row
-								key={item.id} // Assuming "id" is a unique identifier for each trad
+								key={index}
 								active={activeRowIndex === index ? true : false}
 								setActiveRowIndex={setActiveRowIndex}
 								item={item} 
@@ -292,9 +278,7 @@ const TradesTable = (props) => {
 								colorTheme={colorTheme}
 
 							/>)}
-					
 					})
-				
 				}
 
             </div>

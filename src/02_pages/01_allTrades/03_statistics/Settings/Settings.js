@@ -85,7 +85,7 @@ const Settings = (props) => {
     return( 
         
         <div className='settings_container' style={settings_style}>
-            <div className='settings_wrapper'>
+
 
                 <SettingHeader/>
         
@@ -107,8 +107,7 @@ const Settings = (props) => {
                 />
            
         
-            
-            </div>
+
         </div>
     )
 }

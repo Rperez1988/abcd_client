@@ -117,7 +117,7 @@ const CandleGraph = (props) => {
     return(
 
         <div className='candle_chart_'>
-
+{/* 
 			<div className="left_">
 				<div className="trades_object_info_wrapper"  style={{background: colorTheme.primary_color}}>
 
@@ -128,7 +128,7 @@ const CandleGraph = (props) => {
 					/>
 					
 				</div>
-			</div>
+			</div> */}
 
 			<div className="right_">
 					

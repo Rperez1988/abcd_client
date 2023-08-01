@@ -76,6 +76,7 @@ export const getCanvasYSpacing = (mid, height, pixelPoint) => {
 		x = (height + ((500 - mid) * pixelPoint))
 	}
 	return x
+	// return height
 }
 
 

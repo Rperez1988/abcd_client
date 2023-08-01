@@ -40,11 +40,11 @@ const Header = (props) => {
 
 
       <div className='header-page-options'>
-        {/* <div className='header_abcd_logo'>ABCD</div> */}
+        <div className='header_abcd_logo'>ABCD</div>
 
-        <div className='chart_icon'></div>
+        {/* <div className='chart_icon'></div>
         <img className='chart_icon' src={chart}/>
-        <img className='chart_icon' src={journal}/>
+        <img className='chart_icon' src={journal}/> */}
       </div>
       
       {/* <div className='header-page-options'>

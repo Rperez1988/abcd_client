@@ -17,7 +17,9 @@ const BC_Performance = (props) => {
         setTradeIdInView,
         setSelectedBC,
         colorTheme,
-        allTrades
+        allTrades,
+        setSelectedIndex,
+        selectedIndex
     } = props
 
 
@@ -26,7 +28,7 @@ const BC_Performance = (props) => {
     const bc_header = ['BC', 'Trades', 'Wins', 'Lost', 'Win Pct','LPD','APD','RSI WR', 'Vol WR','Vol LR', 'Avg Len W', 'Avg Len L']
     const [columnSelected, setColumnSelected] = useState()
     const [sortedPeformances, setSortedPeformances] = useState()
-    const [selectedIndex, setSelectedIndex] = useState(0)
+   
 
     useEffect(()=>{
 
@@ -88,25 +90,9 @@ const BC_Performance = (props) => {
 
         <div className="cd_selection_container" >
 
-            <div className="cd_settings" 
-            
-            style={     {background: colorTheme.card_header_color}}
-            >
-            <div className="cd_icon_wrapper">
-                    <img className='cd_img'src={refresh}/>
-                </div>
-                <div className="cd_icon_wrapper">
-                    <img className='cd_img'src={left} onClick={()=>{setSelectedIndex(selectedIndex === 0 ? 0 : (prevIndex => prevIndex - 1))}}/>
-                </div>
-                <div className="cd_icon_wrapper">
-                    <img className='cd_img'src={right} onClick={()=>{setSelectedIndex(selectedIndex === 100 ? 100 :prevIndex => prevIndex + 1)}}/>
-                </div>
-                <div className="cd_icon_wrapper">
-                    <img className='cd_img'src={fullscreen}/>
-                </div>
-            </div>
+          
 
-            <div className="cd_selection_" style={{background: 'rgb(17 36 62)',color: "white"}}>
+            <div className="cd_selection_" style={{background: '#040507',color: "white"}}>
                 <div className="peformance_row_off">
 
                     {bc_header.map((item,index) => {
@@ -154,6 +140,13 @@ const BC_Performance = (props) => {
                 }    
             
 
+            </div>
+            
+            <div className="cd_settings" 
+            
+            style={     {background: colorTheme.card_header_color}}
+            >
+        
             </div>
         
         </div>

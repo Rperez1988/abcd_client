@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 .header-container{
   box-sizing: border-box;
 
@@ -9,6 +8,12 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   
 }
 .header-page-options{
@@ -22,6 +27,10 @@
   justify-content: center;
   align-items: center;
   padding-left: 10px;
+  background-color: #040507;
+  background-image: linear-gradient(to left, rgb(8, 20, 36), rgb(3, 22, 31), rgb(8, 20, 36), rgb(4, 5, 7));
+  /* margin-top: 50px; */
+  /* border: 1px solid rgb(57, 57, 57); */
 }
 .option_wrapper{
   box-sizing: border-box;
@@ -104,14 +113,17 @@
 .header_abcd_logo{
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(238deg) brightness(102%) contrast(105%);
   filter: invert(36%) sepia(27%) saturate(2378%) hue-rotate(142deg);
-  height: 55%;
+  /* height: 55%; */
   display: flex;
   justify-content: center;
   align-items: center;
   padding-left: 5px;
   font-family: fantasy;
   padding-right: 20px;
-  font-size: 150%;
+  font-size: 200%;
+  font-family: 'Unica One', cursive;
+ 
+
 }
 
 /* 1600px - 391px*/

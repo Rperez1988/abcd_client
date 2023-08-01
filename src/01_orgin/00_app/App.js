@@ -21,24 +21,29 @@ const App = () => {
       name: 'OG-Purple',
       active: false,
       header: {
-        background_color: '#080915',
+        // background_color: '#080915',
         // border_bottom: '3px solid #98a0ba',
         text_color_unactive: '#aaaaca',
         text_color_active: '#58728a'
       },
     
-      primary_color: 'rgb(8, 20, 36)',
-      background: 'black',
-      row_one_color: '#131516',
-      row_two_color: '#131516',
-      row_one_color: 'rgb(8, 20, 36)',
-      row_two_color: '#152030',
+      // primary_color: 'rgb(8, 20, 36)',
+      // primary_color: 'black',
+      // background: 'red',
+      // row_one_color: '#131516',
+      // row_two_color: '#131516',
+      //
+      row_two_color: 'rgb(22, 23, 28)',
+      row_one_color: 'rgb(34 36 44)',
       text_color: '#ccc',
-      card_header_color: 'rgb(34 60 96)',
+      card_header_color: '#040507',
       
 
       background_color:{
-        background: 'rgb(84 87 93)'
+        background: '    background: linear-gradient(to right, rgb(8, 20, 36), rgb(8, 20, 36), rgb(3, 22, 31)rgba(255, 0, 0, 0));',
+        background: 'black',
+        
+    background: 'hsla(230.00000000000003, 12.00%, 9.80%, 1.00)'
        },
       //  rgb(8, 20, 36
       // rgb(17 36 62);
@@ -53,7 +58,7 @@ const App = () => {
 
           header:{
 
-            background_color: 'rgb(17 36 62)',
+            // background_color: 'rgb(17 36 62)',
             icons_color: 'invert(99%) sepia(100%) saturate(2%) hue-rotate(250deg) brightness(103%) contrast(100%)',
             icon_hovered_color: '',
             trade_symbol_color: 'ghostwhite',
@@ -94,7 +99,7 @@ const App = () => {
             chart:{
 
               background_color:{
-                background: 'linear-gradient(to right,  rgb(8,20,36),  rgb(3, 22, 31), rgb(8,20,36), rgba(255,0,0,0))',
+                background: 'linear-gradient(to right,  rgb(8,20,36),  rgb(3, 22, 31), rgb(8,20,36), #040507)',
                 
                 candle_red_color: 'orange',
                 // border: '1px solid teal'

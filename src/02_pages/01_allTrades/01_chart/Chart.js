@@ -95,46 +95,12 @@ const Chart = (props) => {
 
 	},[all_symbols])
 
-	console.log(all_symbols)
-
-
 	const [loading, setLoading] = useState(false);
 
     return(
 
 		<div className='Chart_Main' >
 	
-			<div className='chart-settings' style={{background: 'rgb(17 36 62)', color: "white"}}>
-
-				<div className="settings_column">
-					<div className="settings_column_row_header"># of Trades</div>
-					<div className="settings_column_row">
-						<div className="settings_column_row_item">{all_trades_length}</div>
-				
-					</div>
-				</div>
-
-				<div className="settings_column">
-					<div className="settings_column_row_header">Market</div>
-					<div className="settings_column_row">
-					<div className="settings_column_row_item">All</div>
-						<div className="settings_column_row_item">Bull</div>
-						<div className="settings_column_row_item">Bear</div>
-					</div>
-				</div>
-
-				<div className="settings_column">
-					<div className="settings_column_row_header">Result</div>
-					<div className="settings_column_row">
-						<div className="settings_column_row_item">All</div>
-						<div className="settings_column_row_item">Won</div>
-						<div className="settings_column_row_item">Lost</div>
-						<div className="settings_column_row_item">Live</div>
-						<div className="settings_column_row_item">Aborted</div>
-					</div>
-				</div>
-	
-			</div>
 
 			{/* <div className='chart-settings2' style={{background: 'rgb(17 36 62)', color: "white"}}>
 

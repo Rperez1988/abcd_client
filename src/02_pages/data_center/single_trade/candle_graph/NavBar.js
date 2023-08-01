@@ -76,18 +76,9 @@ export const NavBar = (props) => {
 
 
     return(
-        <div className='header_container' 
-        
-        style={     {background: colorTheme.card_header_color}}
-        
-        
-        >
+        <div className='header_container' style={{background: colorTheme.card_header_color}}>
 
             <div className='header_wrapper'>		
-
-                {/* <div className='header_one_wrapper' style={style_border_right}>
-                    <div className='header_icon_wrapper' >{allTrades[tradeIdInView]?.tradeInfo['symbol']}</div> 
-                </div> */}
 
                 <div className='header_two_wrapper' >
 
@@ -152,11 +143,7 @@ export const NavBar = (props) => {
          </div> 
 
                 </div>
-                
-                {/* <div className='header_four_wrapper' >
-                    <NavBarButton colorTheme={colorTheme} isAtStartOfTrades={isAtStartOfTrades} image={closefullscreen}/>
-                </div> */}
-                
+                                
             </div>       
         </div>
     )

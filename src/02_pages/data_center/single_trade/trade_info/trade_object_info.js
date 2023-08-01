@@ -20,21 +20,21 @@ const TradeObjectInfo = (props) => {
                 filter={'abcd_volumes'}
                 header={'General'}
             />
-             {/* <TradeObjectSingleInfo 
+            {/* <TradeObjectSingleInfo 
                 colorTheme={colorTheme} 
                 mappingObject={allTrades[tradeIdInView]['enterExitInfo']}
                 filter={'abcd_volumes'}
                 header={'Enter & Exit'}
-            /> 
-              <TradeObjectSingleInfo 
+            />  */}
+              {/* <TradeObjectSingleInfo 
                 colorTheme={colorTheme} 
                 mappingObject={allTrades[tradeIdInView]['pnl']}
                 filter={'abcd_volumes'}
                 header={'PNL'}
-            />       */}
+            />       
 
 
-{/* 
+
             
           
 
@@ -94,10 +94,10 @@ const TradeObjectInfo = (props) => {
                 mappingObject={allTrades[tradeIdInView]['pivotInfo']['pivotB']}
                 filter={'abcd_volumes'}
                 header={'Pivot C'}
-            /> 
+            />  */}
 
             
-          */}
+        
        
           
 

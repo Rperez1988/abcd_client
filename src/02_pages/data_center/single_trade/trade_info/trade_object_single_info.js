@@ -36,7 +36,7 @@ const TradeObjectSingleInfo = (props) => {
                                         key={index}>
                                             <div className='single_stat_header'>{item}</div>
                                             <div className='single_stat_body'
-                                            style={colorTheme.single_trade.trade_info.single_info_block.value_color}>
+                                         >
                                                 {mappingObject[item]}
                                             </div>
                                         </div>
@@ -44,6 +44,13 @@ const TradeObjectSingleInfo = (props) => {
                                 }}
                             })}
                 </div>
+
+                <div className='trade_info_header_wrapper' style={
+                    {background: colorTheme.card_header_color}
+                    
+                    
+                    }></div>
+                
 
              </div>
         </div>
