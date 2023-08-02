@@ -208,7 +208,8 @@ const TradesTable = (props) => {
 		// 'VOLUME'
 		'BC',
 		'CD',
-		'RSI'
+		'RSI',
+		'Enter'
 
 	]
     const filter_options = ['All', 'Win', 'Loss', 'Live', 'Aborted']

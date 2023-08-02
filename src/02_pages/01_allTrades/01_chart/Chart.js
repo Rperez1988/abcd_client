@@ -101,8 +101,8 @@ const Chart = (props) => {
 
 		<div className='Chart_Main' >
 	
-
-			{/* <div className='chart-settings2' style={{background: 'rgb(17 36 62)', color: "white"}}>
+{/* 
+			<div className='chart-settings2' style={{background: 'rgb(17 36 62)', color: "white"}}>
 
 				<div className='trades_search_container'>
 

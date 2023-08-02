@@ -23,10 +23,12 @@ const Row = (props) => {
         // Return the converted date string
         return convertedDateString;
     }
-
+    console.log(item)
     return(
 
-        <div className={active ? 'trade_row_on' : 'trade_row_off'} style={{borderLeft: item['tradeInfo']['tradeResult'] === 'Win' ? '3px solid teal' : '3px solid red'}}
+        <div className={active ? 'trade_row_on' : 'trade_row_off'} style={{
+            borderLeft: item['tradeInfo']['tradeResult'] === 'Win' ? '3px solid teal' : '3px solid red',
+            background: index % 2 == 0 ? colorTheme.row_one_color : colorTheme.row_two_color}}
             onClick={() => {setTradeID(index); setActiveRowIndex(index); }}>
 
             <div className='result-wrapper'>
@@ -60,6 +62,11 @@ const Row = (props) => {
             <div className='default-wrapper' style={{}}>
                 <div className={'rowcolor2--typeborder'}>{item.tradeInfo.rsi}</div>
             </div>
+
+            <div className='default-wrapper' style={{}}>
+                <div className={'rowcolor2--typeborder'}>${item.enterExitInfo.enterPrice}</div>
+            </div>
+
 
         </div>
     )

@@ -33,14 +33,14 @@ const App = () => {
       // row_one_color: '#131516',
       // row_two_color: '#131516',
       //
-      row_two_color: 'rgb(22, 23, 28)',
-      row_one_color: 'rgb(34 36 44)',
+      row_two_color: 'rgb(8, 20, 36)',
+      row_one_color: 'rgb(2, 38, 59)',
       text_color: '#ccc',
       card_header_color: '#040507',
       
 
       background_color:{
-        background: '    background: linear-gradient(to right, rgb(8, 20, 36), rgb(8, 20, 36), rgb(3, 22, 31)rgba(255, 0, 0, 0));',
+        // background: '    background: linear-gradient(to right, rgb(8, 20, 36), rgb(8, 20, 36), rgb(3, 22, 31)rgba(255, 0, 0, 0));',
         background: 'black',
         
     background: 'hsla(230.00000000000003, 12.00%, 9.80%, 1.00)'

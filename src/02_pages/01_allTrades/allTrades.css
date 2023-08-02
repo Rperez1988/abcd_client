@@ -852,7 +852,7 @@
   }
 .Chart_Main{
     box-sizing: border-box;
-    height: 97.5%;
+    height: 85%;
     width: 100%;
     overflow-x: hidden;
     display: flex;

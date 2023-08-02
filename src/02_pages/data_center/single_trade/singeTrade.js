@@ -125,43 +125,43 @@ const SingleTrade = (props) => {
 
 				<div className='single_trade_wrapper2'>
 
-				<div className="cd_settings">
+					<div className="cd_settings">
+					
+						<div className="cd_icon_wrapper" onClick={() => {setSelectedInfoPage('Trades')}}>
+
+								<img className='cd_img'src={typesIcon}/>
+						</div>
+						
+						<div className="cd_icon_wrapper"  onClick={() => {setSelectedInfoPage('Settings')}}>
+								<img className='cd_img'src={settingsIcon}/>
+						</div>
+
+						<div className="cd_icon_wrapper"  onClick={() => {setSelectedInfoPage('BC')}}>
+							BC
+						</div>
+
+						<div className="cd_icon_wrapper"  onClick={() => {setSelectedInfoPage('Settings')}}>
+							CD
+						</div>
+								<div className="cd_icon_wrapper">
+							<img className='cd_img'src={left} onClick={()=>{setSelectedIndex(selectedIndex === 0 ? 0 : (prevIndex => prevIndex - 1))}}/>
+						</div>
+						<div className="cd_icon_wrapper">
+							<img className='cd_img'src={right} onClick={()=>{setSelectedIndex(selectedIndex === 100 ? 100 :prevIndex => prevIndex + 1)}}/>
+						</div>
+
+					</div>
+
 				
-				<div className="cd_icon_wrapper" onClick={() => {setSelectedInfoPage('Trades')}}>
 
-						<img className='cd_img'src={typesIcon}/>
-				</div>
-				
-				<div className="cd_icon_wrapper"  onClick={() => {setSelectedInfoPage('Settings')}}>
-						<img className='cd_img'src={settingsIcon}/>
-				</div>
-
-				<div className="cd_icon_wrapper"  onClick={() => {setSelectedInfoPage('BC')}}>
-					BC
-				</div>
-
-				<div className="cd_icon_wrapper"  onClick={() => {setSelectedInfoPage('Settings')}}>
-					CD
-				</div>
-
-            	</div>
-
-				<div className="cd_settings" style={{background: colorTheme.card_header_color}}>
-      
-                <div className="cd_icon_wrapper">
-                    <img className='cd_img'src={left} onClick={()=>{setSelectedIndex(selectedIndex === 0 ? 0 : (prevIndex => prevIndex - 1))}}/>
-                </div>
-                <div className="cd_icon_wrapper">
-                    <img className='cd_img'src={right} onClick={()=>{setSelectedIndex(selectedIndex === 100 ? 100 :prevIndex => prevIndex + 1)}}/>
-                </div>
-       
-            </div>
-
-				{selected_info_page(selectedInfoPage)}
+					{selected_info_page(selectedInfoPage)}
 			
-					
+					<div className="cd_settings"></div>
+
 					
 				</div>
+
+				
 				
             </div>
 
