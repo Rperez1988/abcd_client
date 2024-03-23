@@ -1,5 +1,6 @@
 export const addAngles = (allTrades, ctx,cpp_,testCandles_,dateOfA,dateOfB,dateOfC,dateOfD, canvasLeftCoordinates, canvasYSpacing, expandSize, midPriceInCandleChart) => {
 
+
 	let a = cpp_[dateOfA]['start'] - canvasLeftCoordinates
 	let b = cpp_[dateOfB]['start'] - canvasLeftCoordinates
 	let c = cpp_[dateOfC]['start'] - canvasLeftCoordinates

@@ -1,426 +1,351 @@
 import React, { useState, useEffect } from 'react';
-
-// pages
-import SingleTrade from '../data_center/single_trade/singeTrade';
-import Chart from './01_chart/Chart'
-
-// api
-import getActiveTrades from '../../03_api/02_getAllTrades/getAllTrades.js'
-import createStatistics from '../../03_api/03_createStatistics/createStatistics.js'
-import getStatistics from '../../03_api/04_getStatistics/getStatistics.js'
-import saveSettings from '../../03_api/05_saveSettings/saveSettings.js'
-import getSettings from '../../03_api/06_getSettings/getSettings.js'
-import updateSelectedSetting_ from '../../03_api/updateSelectedSetting/12_editSetting/updateSelectedSetting';
-
-// components
-import TabDetails from './04_ratios/TabDetails';
-import Settings from './03_statistics/Settings/Settings';
 import './allTrades.css'
-import line  from '../../img/line.png'
-import SideBar from './00_sidebar/SideBar';
-import Statistics from './03_statistics/Statistics';
-import pivotIcon  from './img/bearishwhite.png'
-import piggywhite  from './img/piggywhite.png'
-import sharingwhite  from './img/sharingwhite.png'
-import typesIcon  from './img/types.png'
-import settingsIcon from './img/settingswhite.png'
-import urr from './img/unRealizedReturn.png'
-import StatisticsTab from './03_statistics/StatisticsTab/StatisticsTab';
 import config from '../../config.json';
+import CandleGraph from '../data_center/single_trade/candle_graph/CandleGraph';
+import TableComponent from './TableComponent';
 
-const fetchData = async (server, selected_bc, selected_cd, access_trades, get_selected_trades,setAllTrades) => {
-			
-	await access_trades(server, selected_bc, selected_cd).catch(console.error);
-	await get_selected_trades(setAllTrades)
+const create_selected_candles_in_django = async (selected_pattern) => {
 	
-	// await get_peformance()
+	try {
+		await fetch(`${config.server}/candle_data/selected_candles/`, {
+		method: 'POST',
+		headers: {},
+		body: JSON.stringify({
+			symbol: selected_pattern?.trade_symbol,
+			trade_id: selected_pattern?.id,
+			candles: selected_pattern?.candles
 
-}
-
-const access_trades = async (server, selected_bc, selected_cd) => {
-
-	try{
-		await fetch(server, {
-			method: 'POST',
-			headers: {},
-			body: JSON.stringify({
-
-				bc: selected_bc,
-				cd: selected_cd
-
-			})
+		})
 		});
+	
+	} catch (error) {console.log(error)}
+	
+}
+const filter_greater_than_less_than = async (set_selected_patterns) => {
+	
+	try {
+        await fetch(`${config.server}/patterns/gtlt/`, {
+        method: 'POST',
+        headers: {},
+        body: JSON.stringify({
+            symbol: 'hello'
+
+        })
+        });
+    
+	} catch (error) {console.log(error)}
+	
+}
+// SEND SELCTED SYMBOL AND ITS TRADE IDS
+const send_selected_symbol = async (symbol__info) => {
 
 
+	// try {
+    //     await fetch(`${config.server}/all_patterns_info/get_selected_symbol/`, {
+    //     method: 'POST',
+    //     headers: {},
+    //     body: JSON.stringify({
+    //         symbol: symbol__info.symbol,
+	// 		trade_ids: symbol__info.abcd_instances
+    //     })
+    //     });
+    
 
-	} catch(error){console.log(error)}
+	// } catch (error) {console.log(error)}
 
 }
-const get_selected_trades = async (setAllTrades) => {
+// GET SELECTED PATTERNS THAT WERE SET BY 'send_selected_symbol'
+const get_selected_patterns_from_django = async (set_selected_patterns) => {
 
 	try {
-		const res = await fetch(`${config.server}/access_trades/access_filtered`);
-
-
+		const res = await fetch(`${config.server}/patterns/abcd_patterns/`);
 		const result = await res.json();
-		if (result.length === 0) {
+		set_selected_patterns(result)
 
+		return result
+		
+	} catch (e) { console.log(e); }
+}
+const get_updated_count_patterns = async (set_selected_patterns) => {
 
-			setAllTrades(
-	
-					[
-						{
-						
+	try {
+		const res = await fetch(`${config.server}/patterns/selected_abcd/`);
+		const result = await res.json();
 
-						}
-					]
-				
-				
-			)
-			
-			
-			// setAllTrades([
-			// 	{
-			// 		id: 0,
-			// 		chartData: [
-			// 			{
-			// 				0: {Low: 17.65, Date: '2018-09-12', High: 17.95, Open: 17.85, Close: 17.9}
-			// 			}
-			// 		],
-			// 		duration: {
-			// 			bars: {
-			// 				A_to_B: 0,
-			// 				B_to_C: 0,
-			// 				C_to_D: 0,
-			// 				ab_pct: 0,
-			// 				bc_pct: 0,
-			// 				cd_pct: 0
-			// 			},
-			// 			days: {
-			// 				A_to_B: 0,
-			// 				B_to_C: 0,
-			// 				C_to_D: 0
-			// 			}
+		set_selected_patterns(result)
+	} catch (e) { console.log(e); }
+
+}
+const get_selected_candles_in_django = async () => {
+
+	try {
+		const res = await fetch(`${config.server}/candle_data/view_selected_candles/`);
+		const result = await res.json();
+		// set_selected_candles(result)
 		
-			// 		},
-			// 		enterExitInfo:{
-			// 			enterDate: '01-01-01',
-			// 			enterPrice: '0.00',
-			// 			extDate: '01-01-01',
-			// 			exitPrice: '0.00',
-			// 		},
-			// 		tradeInfo: {
-			// 			id: 0,
-			// 			rsi: "29.38",
-			// 			abc_ID: 0,
-			// 			symbol: "ACBI",
-			// 			volume: 76955,
-			// 			endDate: "2018-10-23",
-			// 			exchange: "Nasdaq",
-			// 			startDate: "2018-09-12",
-			// 			tradeOpen: false,
-			// 			currentDate: "2018-10-23",
-			// 			tradeClosed: true,
-			// 			tradeResult: "Win",
-			// 			abcd_volumes: "[37414.0, 33820.0, 32635.0, 36444.0, 44210.0, 138294.0, 125349.0, 146690.0, 35726.0, 66953.0, 61920.0, 40767.0, 59584.0, 77068.0, 56434.0, 230800.0, 168971.0, 72863.0, 220402.0, 112834.0, 196389.0, 100207.0, 110943.0, 69188.0, 73717.0, 111852.0, 46653.0, 78835.0, 122293.0]",
-			// 			currentPrice: 15.5,
-			// 			pivot_number: 1,
-			// 			tradeDuration: "23",
-			// 			average_volume: 93422.58620689655,
-			// 			tradeCloseDate: "2018-11-15",
-			// 			tradeStartDate: "2018-10-23",
-			// 			closingTradeType: "Bull",
-			// 			openingTradeType: "Bull",
-			// 			completeTradeType: "Bull",
-			// 			percentage_change: "-17.63",
-			// 			lowest_price_dropped: "14.55"
-			// 		},
-			// 		pnl:{
-			// 			"pnl": "1.88",
-			// 			"risk": "1.88",
-			// 			"reward": "1.88",
-			// 			"stopLoss": "13.37",
-			// 			"takeProfit": "17.13",
-			// 			"riskRewardRatio": 5,
-			// 			"returnPercentage": "12.33"
-			// 		},
-			// 		retracement:{
-			// 			"bcRetracement": "53.48",
-			// 			"cdRetracement": "106.28"
-			// 		},
-		
-			// 	}
-			// ])
-		}
-		else {
-			console.log(result)
-			
-			// return result
-		}
-		
+		return result
 		
 
 	} catch (e) { console.log(e); }
 }
-const updateSelectedSetting = (index, allSavedSettings, loadSettings, setAllSavedSettings, selectedSetting) => {
+const get_symbol_totals_from_django = async(set_all_pattern_info) => {
 
-	if(index === 0){
+	try {
+		const res = await fetch(`${config.server}/all_patterns_info/view_all_info/`);
+		const result = await res.json();
 
-		let s = {
-			settingsName: 'Setting ' + allSavedSettings.length,
-			market: '',
-			pivotLength: '',
-			rrr: '',
-			sAndr:'',
-			maxAtoBLength: '',
-			maxBtoCLength: '',
-			maxCtoDLength:'',
-			entryRSI:'',
-			abnormalPriceJump: '',
-			pivotSteepness: '',
-			entryRSI: '',
-			abnormalPriceJump: '',
-			pivotSteepness: '',
-			aBelowB: '',
-			startDate: '',
-			endDate: '',
-			isComplete: false,
-			isSelected: true
-		}
-
-		saveSettings(s, loadSettings)
-	}
-	else{
-		updateSelectedSetting_(selectedSetting.id,allSavedSettings[index].id, loadSettings)
-	}
-
-};
-const get_number_of_pivots = (objectList) => {
-		
-	// Array to store unique pivot_number values
-	var uniquePivotNumbers = [];
-
-	// Loop through the objectList
-	for (var i = 0; i < objectList?.length; i++) {
-	var pivotNumber = objectList[i]?.tradeInfo['pivot_number'];
-
-	// Check if the pivotNumber is not already in the uniquePivotNumbers array
-	if (uniquePivotNumbers.indexOf(pivotNumber) === -1) {
-		// Add the pivotNumber to the uniquePivotNumbers array
-		uniquePivotNumbers.push(pivotNumber);
-	}
-	}
-	return uniquePivotNumbers
-}
-const get_all_data_from_django = async (loadSettings, setAllTrades, set_all_symbols) => {
-
-	await getActiveTrades(setAllTrades, set_all_symbols)
-	await createStatistics()
-	await loadSettings()
-	// let result = await getStatistics()
-	// await fillStatistics(result)
-	
-	
-
+		set_all_pattern_info(result)
+	} catch (e) { console.log(e); }
 }
 const DataCentral = (props) => {
 	
 	const {
-		colorTheme,
+		colorTheme
 	} = props
 
-	const [allTrades, setAllTrades] = useState()
 	const [tradeIdInView, setTradeIdInView] = useState(0)
 	const [isTradeBeingViewed, setIsTradeBeingViewd] = useState()
-	const [allSavedSettings, setAllSavedSettings] = useState()
-	const [tradesTab, setTradesTab] = useState(false)
-	const [peformanceTab, setPerformanceTab] = useState(true)
-	const [investmentTab, setInvestmentTab] = useState(false)
-	const [pivotTab, setPivotTab] = useState(false)
-	const [settingsTab, setSettingsTab] = useState(false)
-	const [unRealizedReturnTab, setUnRealizedReturnTab] = useState(false)
-	const [selectedInfoPage, setSelectedInfoPage] = useState('Settings')
-	const [selectedBC, setSelectedBC] = useState()
-	const [all_symbols, set_all_symbols] = useState()
-	
+	const [isFullScreen, setIsFullScreen] = useState(false)
+	const [all_pattern_info, set_all_pattern_info] = useState()
+	const [selected_patterns, set_selected_patterns] = useState()
+	const [selected_pattern, set_selected_pattern] = useState()
+	const [selected_candles, set_selected_candles] = useState()
+	const [selected_pattern_statistics, set_selected_pattern_statistics] = useState()
 
 
-	useEffect(() => {
-		loadSettings()
-		get_all_data_from_django(loadSettings, setAllTrades, set_all_symbols)
-	},[]);
-
-	const handle_info_page_selected = (tab) => {
-
-		if(tab === 'Trades'){
-			setTradesTab(true)
-			setPerformanceTab(false)
-			setInvestmentTab(false)
-			setPivotTab(false)
-			setUnRealizedReturnTab(false)
-			setSettingsTab(false)
-		}
-		else if(tab === 'Peformance'){
-			setTradesTab(false)
-			setPerformanceTab(true)
-			setInvestmentTab(false)
-			setPivotTab(false)
-			setUnRealizedReturnTab(false)
-			setSettingsTab(false)
-		}
-		else if(tab === 'Investment'){
-			setTradesTab(false)
-			setPerformanceTab(false)
-			setInvestmentTab(true)
-			setPivotTab(false)
-			setUnRealizedReturnTab(false)
-			setSettingsTab(false)
-		}
-		else if(tab === 'Pivot'){
-			setTradesTab(false)
-			setPerformanceTab(false)
-			setInvestmentTab(false)
-			setPivotTab(true)
-			setUnRealizedReturnTab(false)
-			setSettingsTab(false)
-		}
-		else if(tab === 'Settings'){
-			setTradesTab(false)
-			setPerformanceTab(false)
-			setInvestmentTab(false)
-			setPivotTab(false)
-			setUnRealizedReturnTab(false)
-			setSettingsTab(true)
-		}
-		else if(tab === 'UnRealized'){
-			setTradesTab(false)
-			setPerformanceTab(false)
-			setInvestmentTab(false)
-			setPivotTab(false)
-			setSettingsTab(false)
-			setUnRealizedReturnTab(true)
-		}
-	}
-	const loadSettings = async () => {
-
-		const savedSettings = await getSettings().catch(console.error)
-
-		setAllSavedSettings(savedSettings)
-	}
-	const setTradeID = (el) => {
-		setTradeIdInView(el)
-		setIsTradeBeingViewd(true)
-	}
+	// CHART VIEW TOOLS
 	const browseChartsRight = () => {
 		setTradeIdInView(prevTradeInView => prevTradeInView + 1)
 	}
 	const browseChartsLeft = () => {
 		setTradeIdInView(prevTradeInView => prevTradeInView - 1)
 	}
-	let number_of_pivots = get_number_of_pivots(allTrades)
 
+	// GET SYMBOL TOTAL LIST
+	useEffect(() => {
+
+		const get_starting_data = async () => {
+			await get_symbol_totals_from_django(set_all_pattern_info)
+			let res = await get_selected_patterns_from_django(set_selected_patterns)
+			set_selected_pattern(res[0])
+		}
+		get_starting_data()	
+	},[]);
+
+	/**	 
+	 *  Whenever the SELECTED_PATTERN changes, this function will do 3 task.
+	 * -
+	 * 	1. Set the new 'selected_pattern' statistics to 'selected_pattern_statistics'.
+	 *  2. Tell django to create a instance of the 'selected_pattern' candles.
+	 *  3. Get the 'selected_pattern' candles from django and set it to 'selected_candles'.
+	 */
 	useEffect(()=>{
 
-		// allTrades && setFilteredTrades(allTrades)
+		const prepare_selected_candle_data = async () => {
 
-		// On chart load get peformance data.
-		const get_peformance = async () =>{
-
-			try {
-
-				const res = await fetch(`${config.server}/access_trades/access_peformance`);
-
-				const result = await res.json();
+			set_selected_pattern_statistics(
+				{
+					// 'id': selected_pattern?.id,
+					'Symbol': selected_pattern?.trade_symbol,
+					'ABCD Bar Length': selected_pattern?.pattern_ABCD_bar_length,
+					'ABCD End Date': selected_pattern?.pattern_ABCD_end_date,
+					'ABCD Start Date': selected_pattern?.pattern_ABCD_start_date,
+					'ABC Bar Length': selected_pattern?.pattern_ABC_bar_length,
+					'ABC End Date': selected_pattern?.pattern_ABC_end_date,
+					'ABC Start Date': selected_pattern?.pattern_ABC_start_date,
+					'AB Bar Length': selected_pattern?.pattern_AB_bar_duration,
+					'AB End Date': selected_pattern?.pattern_AB_end_date,
+					'AB Start Date': selected_pattern?.pattern_AB_start_date,
+					'A Close': selected_pattern?.pattern_A_close,
+					'A End Date': selected_pattern?.pattern_A_end_date,
+					'A High': selected_pattern?.pattern_A_high,
+					'A Low': selected_pattern?.pattern_A_low,
+					'A Open': selected_pattern?.pattern_A_open,
+					'A Date': selected_pattern?.pattern_A_pivot_date,
+					'A Start Date': selected_pattern?.pattern_A_start_date,
+					'BC Bar Length': selected_pattern?.pattern_BC_bar_length,
+					'B Close': selected_pattern?.pattern_B_close,
+					'B End Date': selected_pattern?.pattern_B_end_date,
+			
+					'B High': selected_pattern?.pattern_B_high,
+					'B Low': selected_pattern?.pattern_B_low,
+					'B Open': selected_pattern?.pattern_B_open,
+					'B Date': selected_pattern?.pattern_B_pivot_date,
+					'B Start Date': selected_pattern?.pattern_B_start_date,
+					'CD Bar Length': selected_pattern?.pattern_CD_bar_length,
+					'C Bar Retracement': selected_pattern?.pattern_C_bar_retracement,
+					'C Close': selected_pattern?.pattern_C_close,
+					'C End Date': selected_pattern?.pattern_C_end_date,
+					'C High': selected_pattern?.pattern_C_high,
+					'C Low': selected_pattern?.pattern_C_low,
+					'C Open': selected_pattern?.pattern_C_open,
+					'C Date': selected_pattern?.pattern_C_pivot_date,
+					'C Price Retracement': selected_pattern?.pattern_C_price_retracement,
+					'C Start Date': selected_pattern?.pattern_C_start_date,
+					'D Bar Retracement': selected_pattern?.pattern_D_bar_retracement,
+					'D Price Retracement': selected_pattern?.pattern_D_price_retracement,
+			
+					'Trade Created': String(selected_pattern?.trade_created),
+					'Trade Bar Length': selected_pattern?.trade_duration_bars,
+					'Trade Day Length': selected_pattern?.trade_duration_days,
+					'Entered Date': selected_pattern?.trade_entered_date,
+					'Entered Price': selected_pattern?.trade_entered_price,
+					'Exited Date': selected_pattern?.trade_exited_date,
+					'Exited Price': selected_pattern?.trade_exited_price,
+					'Closed': String(selected_pattern?.trade_is_closed),
+					'Open': String(selected_pattern?.trade_is_open),
+					'PNL': selected_pattern?.trade_pnl,
+					'Result': selected_pattern?.trade_result,
+					'Return Percentage': selected_pattern?.trade_return_percentage,
+					'Reward': selected_pattern?.trade_reward,
+					'Risk': selected_pattern?.trade_risk,
+					'RRR': selected_pattern?.trade_rrr,
+					'Stop Loss': selected_pattern?.trade_stop_loss,
+			
+					'Take Profit': selected_pattern?.trade_take_profit,
 	
-				set_all_peformances(result)
-
-			} catch (e) { console.log(e); }
+					'Current Date': selected_pattern?.current_date,
+					'Creation Date': selected_pattern?.d_dropped_below_b
+				
+				}
+			)
+			
+			await create_selected_candles_in_django(selected_pattern)
+		
+			let candles = await get_selected_candles_in_django()
+			candles.sort((a, b) => (a.candle_date > b.candle_date) ? 1 : -1);
+			set_selected_candles(candles)
+	
 		}
-
-		get_peformance()
-
-	},[allTrades])
-
-	const [all_peformances, set_all_peformances] = useState(false)
 	
-	// const [filteredTrades, setFilteredTrades] = useState([])
+		prepare_selected_candle_data()
+	}, [selected_pattern])
 	
-	const selected_info_page = (settingsTab) => {
+	// DISPLAY SINGLE PATTERN INFO
+	const resultArray = selected_pattern ? Object.entries(selected_pattern_statistics).map(([key, value]) => {
+		return (
+			<div className='pattern_stat_container' key={key}>
+			<div className='pattern_stat_key'>{key}</div>
+			<div className='pattern_stat_val'>{value}</div>
+			</div>
+		);
+	}) : null;
 
-		switch(settingsTab){
-
-			case 'Settings': 
-				return <Settings 
-				allSavedSettings={allSavedSettings}
-				setAllSavedSettings={setAllSavedSettings}
-				updateSelectedSetting={updateSelectedSetting}
-				colorTheme= {colorTheme}
-				loadSettings={loadSettings}
-			/>
-			case 'Trades': 
-				return <Chart 
-				number_of_pivots={number_of_pivots}
-				all_trades_length={allTrades?.length}
-				colorTheme={colorTheme} 
-				allTrades={allTrades} 
-				setTradeID={setTradeID} 
-				setAllTrades={setAllTrades}
-				setTradeIdInView={setTradeIdInView} 
-				tradeIdInView={tradeIdInView}
-				selectedBC={selectedBC}
-				setSelectedBC={setSelectedBC}
-				// filteredTrades={filteredTrades}
-				// setFilteredTrades={setFilteredTrades}
-				tradesTab={tradesTab}
-				setSelectedInfoPage={setSelectedInfoPage}
-				settingsIcon={settingsIcon}
-				typesIcon={typesIcon}
-				all_symbols={all_symbols}
-		/>
-		}
-
-
-	}
 
 	return (
 		
 		<div className='allTrades_body'> 
 
-			{ <SingleTrade 
-				browseChartsRight={browseChartsRight} 
-				browseChartsLeft={browseChartsLeft} 
-				setTradeIdInView={setTradeIdInView} 
-				isTradeBeingViewed={isTradeBeingViewed} 
-				tradeIdInView={tradeIdInView} 
-				allTrades={allTrades} 
-				setIsTradeBeingViewd={setIsTradeBeingViewd}
-				colorTheme={colorTheme}
-				setAllTrades={setAllTrades}
-				selectedBC={selectedBC}
-				setSelectedBC={setSelectedBC}
-				all_peformances={all_peformances}
-				fetchData={fetchData}
-				access_trades={access_trades}
-				get_selected_trades={get_selected_trades}
-				allSavedSettings={allSavedSettings}
-				setAllSavedSettings={setAllSavedSettings}
-				updateSelectedSetting={updateSelectedSetting}
-				loadSettings={loadSettings}
-				number_of_pivots={number_of_pivots}
-				setTradeID={setTradeID}
-				tradesTab={tradesTab}
-				setSelectedInfoPage={setSelectedInfoPage}
-				settingsIcon={settingsIcon}
-				typesIcon={typesIcon}
-				all_symbols={all_symbols}
-				selectedInfoPage={selectedInfoPage}
+			 <div className='patterns_list'>
+
+				<div className='table1'>
+				<TableComponent 
+					tableDataName={'Symbols'}
+					tableData={all_pattern_info}
+					header={ ['Symbol', 'ABCDs', 'Passed', 'Failed', 'Open','Pct']}
+					send_selected_symbol={send_selected_symbol}
+					get_selected_patterns_from_django={get_selected_patterns_from_django}
+					set_selected_patterns={set_selected_patterns}
+					set_selected_pattern={set_selected_pattern}
+					get_updated_count_patterns={get_updated_count_patterns}
+
+				/>
+
+				</div>
+
+				<div className='table2'>
+				<TableComponent 
+					tableDataName={'Single Trade'}
+					tableData={selected_patterns}
+					header={ [
+						'#',
+						'STATUS',
+						'SYMBOL',
+						'DURATION',
+						'ENTER',
+						'EXIT',
+						'PNL',
+						'RETURN',
+						'AB'
+					]}
+					send_selected_symbol={send_selected_symbol}
+					get_selected_patterns_from_django={get_selected_patterns_from_django}
+					set_selected_patterns={set_selected_patterns}
+					set_selected_pattern={set_selected_pattern}
+					settingOptions={['All', 'Open', 'Bull', 'Bear']}
+					get_updated_count_patterns={get_updated_count_patterns}
+				
+					
+					
+
+				/>
+
+				</div>
+
+				
+			</div> 
+
+			<div className='selected_pattern_container'>
+				
+				{/* <div className='cd_settings'></div> */}
+				
+				{/* <div className='selected_pattern_body'> */}
+				
+					<div className='pattern_details_container'>
+{/* 
+						<div className='pattern_dates'>
+							
+							<div className='pattern_date'>Lengths</div>
+							<div className='pattern_date'>{selected_pattern && selected_pattern.pattern_AB_bar_duration}</div>
+							<div className='pattern_date'>{selected_pattern && selected_pattern.pattern_BC_bar_length}</div>
+							<div className='pattern_date'>{selected_pattern && selected_pattern.pattern_CD_bar_length}</div>
+							<div className='pattern_date'>{selected_pattern && selected_pattern.trade_duration_bars}</div>
+					
+					
+						</div>
+							
+						<div className='pattern_dates'>
+							<div className='pattern_date'>Dates</div>
 						
-			/>} 
+							<div className='pattern_date'>{selected_pattern && selected_pattern.pattern_A_pivot_date}</div>
+							<div className='pattern_date'>{selected_pattern && selected_pattern.pattern_B_pivot_date}</div>
+							<div className='pattern_date'>{selected_pattern && selected_pattern.pattern_C_pivot_date}</div>
+							<div className='pattern_date'>{selected_pattern && selected_pattern.trade_entered_date}</div>
+							<div className='pattern_date'>{selected_pattern && selected_pattern.trade_exited_date}</div>
+						</div> */}
+							
+						{/* <div className='cchart'> */}
+						
+							{selected_candles != undefined && <CandleGraph
+								isTradeBeingViewed={isTradeBeingViewed}
+								tradeIdInView={tradeIdInView}
+								// allTrades={selected_candles}
+								// turnOverLayOff={turnOverLayOff}
+								browseChartsRight={browseChartsRight}
+								browseChartsLeft={browseChartsLeft}
+								setIsTradeBeingViewd={setIsTradeBeingViewd}
+								colorTheme={colorTheme}			
+								isFullScreen={isFullScreen}
+								setIsFullScreen={setIsFullScreen}
+								selected_candles={selected_candles}
+								selected_pattern={selected_pattern}
+								/>
+							}
+						{/* </div> */}
 
-			<div className="single_trade_right"></div>
+						{/* <div className='pattern_basics'></div> */}
+			
+					</div>
 
+					 {/* <div className='aps'>
+						{resultArray}
+					</div>  */}
+				
+				{/* </div> */}
+				{/* <div className='cd_settings'></div> */}
+			</div>
 
-
+			
 		</div>
 
 	);

@@ -29,7 +29,9 @@ export const NavBar = (props) => {
         setIsRetracementMeasurement,
         retracementMeasurement,
         isCandles,
-        setIsCandles
+        setIsCandles,
+        isFullScreen,
+        setIsFullScreen
     } = props
 
     // console.log(retracementMeasurement)
@@ -139,7 +141,9 @@ export const NavBar = (props) => {
             <img 
                 // style={isHovered ? style_icon_hovered_color : style_icon_color} 
                 className={'header_icon_image'} 
-                src={closefullscreen}/>			
+                src={closefullscreen}
+                onClick={()=>{setIsFullScreen(!isFullScreen); console.log('hello')}}
+                />			
          </div> 
 
                 </div>

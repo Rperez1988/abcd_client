@@ -40,7 +40,8 @@ const Header = (props) => {
 
 
       <div className='header-page-options'>
-        <div className='header_abcd_logo'>ABCD</div>
+        <div className='header_abcd_logo' onClick={()=>{setActivePage('All Trades')}}>ABCD</div>
+        <div className='header_abcd_logo' onClick={()=>{setActivePage('Admin')}}>ADMIN</div>
 
         {/* <div className='chart_icon'></div>
         <img className='chart_icon' src={chart}/>

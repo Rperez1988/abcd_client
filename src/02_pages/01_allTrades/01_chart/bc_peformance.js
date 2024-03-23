@@ -19,7 +19,12 @@ const BC_Performance = (props) => {
         colorTheme,
         allTrades,
         setSelectedIndex,
-        selectedIndex
+        selectedIndex,
+        sortedPeformances,
+        setSortedPeformances,
+        setcds,
+        create_cd_objects,
+		get_cd_ojbects,
     } = props
 
 
@@ -27,19 +32,13 @@ const BC_Performance = (props) => {
     const [active_bc_peformance, set_active_bc_peformance] = useState()
     const bc_header = ['BC', 'Trades', 'Wins', 'Lost', 'Win Pct','LPD','APD','RSI WR', 'Vol WR','Vol LR', 'Avg Len W', 'Avg Len L']
     const [columnSelected, setColumnSelected] = useState()
-    const [sortedPeformances, setSortedPeformances] = useState()
-   
 
-    useEffect(()=>{
 
-        setSortedPeformances(all_peformances)
-            
 
-    },[all_peformances])
 
     const handle_sorting = (item) => {
         if(item === 'Lost'){
-            let sortedData = [...all_peformances].sort((a, b) => b.active - a.active)
+            let sortedData = [...all_peformances].sort((a, b) => b.lost - a.lost)
             setSortedPeformances(sortedData)
         }
         if(item === 'Trades'){
@@ -51,11 +50,22 @@ const BC_Performance = (props) => {
             setSortedPeformances(sortedData)
         }
         if(item === 'APD'){
-            let sortedData = [...all_peformances].sort((a, b) => b.average_price_dropped - a.average_price_dropped)
+            // let sortedData = [...all_peformances].sort((a, b) => b.average_price_dropped - a.average_price_dropped)
+
+            let sortedData = [...all_peformances].sort((a, b) => {
+                const aValue = parseFloat(a.average_price_dropped);
+                const bValue = parseFloat(b.average_price_dropped);
+                return bValue - aValue;
+              });
             setSortedPeformances(sortedData)
         }
         if(item === 'LPD'){
-            let sortedData = [...all_peformances].sort((a, b) => b.lowest_price_dropped - a.lowest_price_dropped)
+            // let sortedData = [...all_peformances].sort((a, b) => b.lowest_price_dropped - a.lowest_price_dropped)
+            let sortedData = [...all_peformances].sort((a, b) => {
+                const aValue = parseFloat(a.lowest_price_dropped);
+                const bValue = parseFloat(b.lowest_price_dropped);
+                return bValue - aValue;
+              });
             setSortedPeformances(sortedData)
         }
         if(item === 'RSI WR'){
@@ -70,16 +80,26 @@ const BC_Performance = (props) => {
             let sortedData = [...all_peformances].sort((a, b) => b.volume_change_win_pct - a.volume_change_win_pct)
             setSortedPeformances(sortedData)
         }
-        if(item === 'WIN PCT'){
-            let sortedData = [...all_peformances].sort((a, b) => b.win_pct - a.win_pct)
+        if(item === 'Win Pct'){
+            // let sortedData = [...all_peformances].sort((a, b) => b.win_pct - a.win_pct)
+
+            let sortedData = [...all_peformances].sort((a, b) => {
+                const aValue = parseFloat(a.win_pct);
+                const bValue = parseFloat(b.win_pct);
+                return bValue - aValue;
+              });
             setSortedPeformances(sortedData)
         }
-        if(item === 'WINS'){
+        if(item === 'Wins'){
             let sortedData = [...all_peformances].sort((a, b) => b.wins - a.wins)
             setSortedPeformances(sortedData)
         }
         if(item === 'BC'){
             let sortedData = [...all_peformances].sort((a, b) => b.retracement - a.retracement)
+            setSortedPeformances(sortedData)
+        }
+        if(item === 'Avg Len L'){
+            let sortedData = [...all_peformances].sort((a, b) => b.average_length - a.average_length)
             setSortedPeformances(sortedData)
         }
         
@@ -89,8 +109,6 @@ const BC_Performance = (props) => {
     return(
 
         <div className="cd_selection_container" >
-
-          
 
             <div className="cd_selection_" style={{background: '#040507',color: "white"}}>
                 <div className="peformance_row_off">
@@ -111,7 +129,7 @@ const BC_Performance = (props) => {
 
                 {allTrades !== undefined && 
                 
-                sortedPeformances && sortedPeformances.map((item,index) => (
+                sortedPeformances && sortedPeformances?.map((item,index) => (
 
                     <BC_Performance_Row
                          key={index}
@@ -129,6 +147,10 @@ const BC_Performance = (props) => {
                          set_bc_tab={set_bc_tab}
                          colorTheme={colorTheme}
                          setSelectedIndex={setSelectedIndex}
+                   
+                         setcds={setcds}
+                         create_cd_objects={create_cd_objects}
+					    get_cd_ojbects={get_cd_ojbects}
                      />
  
        
@@ -141,13 +163,9 @@ const BC_Performance = (props) => {
             
 
             </div>
-            
-            <div className="cd_settings" 
-            
-            style={     {background: colorTheme.card_header_color}}
-            >
-        
-            </div>
+
+            <div className="cd_selection_footer"></div>
+       
         
         </div>
 

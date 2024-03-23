@@ -69,6 +69,7 @@ export const getPriceBarXandYSpacing = (isMouseOverCanvasPrices, isMousePressedO
 export const getCanvasYSpacing = (mid, height, pixelPoint) => {
 
 	let x 
+	mid = -1000
 	if(500 > mid){
 		x = (height - ((500 - mid) * pixelPoint))
 	}

@@ -15,8 +15,6 @@ const DisplayedSetting = (props) => {
 
     const [activeDropMenu, setActiveDropMenu] = useState()
 
-    console.log(temp)
-  
     return(
 
         <div className='display_selected_setting'>

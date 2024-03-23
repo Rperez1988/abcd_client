@@ -214,10 +214,10 @@ export const addGrid = (ctx, pixelsInExpandedPriceUnit, expandInPlace, spaceBetw
 	const plotXGrid = () => {
 
 		let xCordinate = spaceBetweenWicks + canvasXSpacing - 5
-		for (let i = 0; i < 24; i += 1) 
+		for (let i = 0; i < 10; i += 1) 
 		{
-			ctx.moveTo(xCordinate, 1)
-			ctx.lineTo(xCordinate, 1950)
+			ctx.moveTo(xCordinate, 50)
+			ctx.lineTo(xCordinate, 50)
 			xCordinate += (candleWidth + spaceBetweenCandles) * 10
 		}
 	}
@@ -238,15 +238,33 @@ export const addGrid = (ctx, pixelsInExpandedPriceUnit, expandInPlace, spaceBetw
 		ctx.beginPath(); 
 		// ctx.strokeStyle = '#0a5d72';
 		// ctx.strokeStyle = '#902020';
-		ctx.strokeStyle = colorTheme.candle_chart.grid_line_color
+		// ctx.strokeStyle = colorTheme.candle_chart.grid_line_color
 		ctx.lineWidth = .2;   
-		plotYGrid(startPoint, priceUnitSize)
+		// plotYGrid(startPoint, priceUnitSize)
 		plotXGrid()
 		ctx.stroke();
 	}
 	draw()
 }
-export const addPrices = (enter, risk, reward, allTrades, pixelsInExpandedPriceUnit, pixelsInAPriceUnit, priceIncrement, ctx,setting, priceBarHeight, expandSize, midPriceInCandleChart, canvasDimensionHeight, inFullScreen, canvasYSpacing, width) => {
+export const addPrices = (
+	selected_pattern,
+	enter, 
+	risk, 
+	reward, 
+	allTrades, 
+	pixelsInExpandedPriceUnit, 
+	pixelsInAPriceUnit, 
+	priceIncrement, 
+	ctx,
+	setting, 
+	priceBarHeight, 
+	expandSize, 
+	midPriceInCandleChart, 
+	canvasDimensionHeight, 
+	inFullScreen, 
+	canvasYSpacing,
+	width,
+	) => {
 
 	const getAmountMidExpandSize = (setting) => {
 
@@ -287,9 +305,9 @@ export const addPrices = (enter, risk, reward, allTrades, pixelsInExpandedPriceU
 		let x = canvasYSpacing + (expandSize * (midPriceInCandleChart / 100)) - enter
 		let z = parseFloat(canvasYSpacing + (expandSize * (midPriceInCandleChart / 100)) - enter + risk)
 		
-		let green_exit = parseFloat(allTrades.enterExitInfo.enterPrice) + parseFloat(allTrades.pnl.reward)
-		let enter_price = allTrades.enterExitInfo.enterPrice
-		let red_exit = parseFloat(allTrades.enterExitInfo.enterPrice) - parseFloat(allTrades.pnl.risk)
+		let green_exit = selected_pattern.trade_entered_price + selected_pattern.trade_pnl
+		let enter_price = selected_pattern.trade_entered_price
+		let red_exit = selected_pattern.trade_entered_price - selected_pattern.trade_risk
 
 	
 		ctx.font = `${desiredFontSize}px sans-serif`; 

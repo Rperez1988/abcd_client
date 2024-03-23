@@ -9,11 +9,19 @@ export const mouseReleasedOnCanvas = (setIsMousePressedOnCanvas,setPrevCanvasXSp
 	setPrevCanvasYSpacing(canvasYSpacing)
 
 }	
-export const mousePressedOnPrices = (setPreviousPriceSpacing,setIsMousePressedOnPrices,setXCoordinatesOnMouseClick,setYCoordinatesOnMouseClick,priceSpacing,xyActiveCoordinates) => {
+export const mousePressedOnPrices = (
+	
+	// setPreviousPriceSpacing,
+	setIsMousePressedOnPrices,
+	// setXCoordinatesOnMouseClick,
+	setYCoordinatesOnMouseClick,
+	// priceSpacing,
+	xyActiveCoordinates
+	) => {
 
-	setPreviousPriceSpacing(priceSpacing)
+	// setPreviousPriceSpacing(priceSpacing)
 	setIsMousePressedOnPrices(true)
-	setXCoordinatesOnMouseClick(xyActiveCoordinates['x'])
+	// setXCoordinatesOnMouseClick(xyActiveCoordinates['x'])
 	setYCoordinatesOnMouseClick(xyActiveCoordinates['y']) 
 
 }

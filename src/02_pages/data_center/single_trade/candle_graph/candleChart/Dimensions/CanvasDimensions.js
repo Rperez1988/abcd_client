@@ -13,9 +13,12 @@ export const getChartCorners = (canvasChart, setCanvasChartDimensions) => {
 
 	}
 }
+
 export const getPriceBarCorners = (canvasPriceBar,setCanvasPriceDimensions) => {
 
+
 		const graph = canvasPriceBar.current;
+		
 		setCanvasPriceDimensions({
 			'height': graph.getBoundingClientRect()['height'],
 			'width': graph.getBoundingClientRect()['width'],

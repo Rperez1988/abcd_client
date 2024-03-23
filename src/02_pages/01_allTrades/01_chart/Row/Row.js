@@ -1,73 +1,148 @@
 import { useEffect, useState } from 'react'
 import './Row.css'
-
+import config from '../../../../config.json';
 const Row = (props) => {
 
     const {
+        data,
         active,
         setActiveRowIndex,
-        item,
-        index, 
-        setTradeID,
-        colorTheme,
+        index,
+        send_selected_symbol,
+        symbol_info,
+        retrieve_patterns,
+        set_selected_patterns,
+        set_selected_pattern,
+        tableDataName,
+        item
+    
     } = props
 
+    const get_style = (index, ) => {
 
-    function convertDateString(dateString) {
-        // Split the date string into an array using the "-" delimiter
-        var parts = dateString.split("-");
-        
-        // Rearrange the parts of the array to get the month/day/year string
-        var convertedDateString = parts[1] + "-" + parts[2] + "-" + parts[0];
-        
-        // Return the converted date string
-        return convertedDateString;
+        if(tableDataName === "Single Trade" && index === 1){
+            return {
+                color: item.trade_result === 'Win' ? 'white' : 
+                item.trade_result === 'Lost' ? 'white' : 'white',
+                // width: '60%',
+                borderRadius: '0px',
+                borderBottom: item.trade_result === 'Win' ? '3px inset teal' : 
+                item.trade_result === 'Lost' ? '3px inset darkorange' : '3px inset gray',
+                backgroundColor: 'black',
+                fontWeight: 900,
+            }
+        }
+
+        // if(index === 0){
+        //     return{
+        //         backgroundColor: 'black',
+        //         border: '1px solid gray',
+        //         // fontFamily: 'Staatliches, cursive',
+        //         color: 'gray',
+        //         fontWeight: '1000',
+        //         // fontSize: '100%',
+        //         // maxWidth: '40px'
+        //         // color: 'gray'
+                
+        //     }
+        // }
+        // if(tableDataName === "BC Peformance" && index === 1){
+        //     return {
+                
+        //         // backgroundColor: item.trade_result === 'Win' ? 'teal' : 
+        //         // item.trade_result === 'Loss' ? '#fd5a5a' : 'white',
+                
+        //         color: 'lightblue',
+    
+        //         width: '35%',
+        //         fontWeight: 900,
+        //         borderBottom: '1px solid #51969a',
+        //         borderRadius: '0px'
+                
+
+        //         // border: item.trade_result === 'Win' ? '1.6px solid teal' : 
+        //         // item.trade_result === 'Loss' ? '1.6px solid #fd5a5a' : '1.6px solid white',
+                
+                
+        //     }
+        // }
+        // if(tableDataName === "BC Peformance" && index === 2){
+        //     return {
+                
+        //         // backgroundColor: item.trade_result === 'Win' ? 'teal' : 
+        //         // item.trade_result === 'Loss' ? '#fd5a5a' : 'white',
+                
+        //         color: 'lightblue',
+        //         width: '40%',
+        //         fontWeight: 900,
+        //         border: '1.5px inset teal',
+        //         borderRadius: '5px',
+                
+        //         // border: item.trade_result === 'Win' ? '1.6px solid teal' : 
+        //         // item.trade_result === 'Loss' ? '1.6px solid #fd5a5a' : '1.6px solid white',
+                
+                
+        //     }
+        // }
+        // if(tableDataName === "BC Peformance" && index === 3){
+        //     return {
+        //         color: 'lightblue',
+        //         width: '40%',
+        //         fontWeight: 900,
+        //         border: '1.5px inset darkorange',
+        //         borderRadius: '5px',
+        //         // backgroundColor: 'black'
+                
+        //     }
+        // }
+        // if(index === 0){
+        //     return {
+                
+        //         color: 'lightblue',
+        //         width: '75%',
+        //         border: '3px solid #238aa7',
+         
+        //     }
+        // }
+        // if(index === 2){
+        //     return {
+                
+        //         color: 'lightblue',
+        //         width: '100%',
+      
+        //         fontWeight: 'lighter'
+            
+        //     }
+        // }
     }
-    console.log(item)
+
+
+
+
     return(
 
-        <div className={active ? 'trade_row_on' : 'trade_row_off'} style={{
-            borderLeft: item['tradeInfo']['tradeResult'] === 'Win' ? '3px solid teal' : '3px solid red',
-            background: index % 2 == 0 ? colorTheme.row_one_color : colorTheme.row_two_color}}
-            onClick={() => {setTradeID(index); setActiveRowIndex(index); }}>
-
-            <div className='result-wrapper'>
-                <div className={'result-'}>{index}</div>
-            </div>
-
-            <div className='result-wrapper'>
-                <div className={'result-'} style={{}}>{item['tradeInfo']['tradeResult']}</div>
-            </div>
-
-            <div className='symbol-wrapper' >{item['tradeInfo']['symbol']}</div>
-
-            <div className='default-wrapper' style={{}}>${item['pnl']['pnl']}</div>
-
-            <div className='default-wrapper' style={{}}>{item['pnl']['returnPercentage']}%</div>
-
-            <div className='default-wrapper' style={{}}>{convertDateString(item['enterExitInfo']['enterDate'])}</div>
-
-            <div className='duration-wrapper'>
-                <div className='duration-border' style={{}}>{item.tradeInfo['tradeDuration']} Days</div>
-            </div>
-
-            <div className='default-wrapper' style={{}}>
-                <div className={'rowcolor2--typeborder'}>{item.retracement.bcRetracement}</div>
-            </div>
-
-            <div className='default-wrapper' style={{}}>
-                <div className={'rowcolor2--typeborder'}>{item.retracement.cdRetracement}</div>
-            </div>
-         
-            <div className='default-wrapper' style={{}}>
-                <div className={'rowcolor2--typeborder'}>{item.tradeInfo.rsi}</div>
-            </div>
-
-            <div className='default-wrapper' style={{}}>
-                <div className={'rowcolor2--typeborder'}>${item.enterExitInfo.enterPrice}</div>
-            </div>
-
-
+        <div className={active? 'trade_row_on' : 'trade_row_off'}
+            onClick={async() => {
+                setActiveRowIndex(index)
+                await set_selected_pattern(item)
+                await send_selected_symbol(symbol_info)
+                // await retrieve_patterns(set_selected_patterns)
+                
+            }} >
+            
+            {/* DISPLAY EACH GIVEN VALUE FOR CURRENT ROW */}
+            {data?.map((item,index)=>{
+          
+                return(
+                    <div className='result-wrapper' key={index} style={get_style(index)}>
+                        <div className='table_trade_number'> 
+                            {item}
+                        </div>
+                    </div>
+                )
+            })}
+            
+    
         </div>
     )
 }

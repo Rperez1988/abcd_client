@@ -213,7 +213,7 @@ const App = () => {
   return (
 
       <div className='App' style={themes[activeTheme].background_color}>
-
+        
         <Header setActiveTheme={setActiveTheme} themes={themes} theme={themes[activeTheme]} setActivePage={setActivePage} activePage={activePage}/>
         <Body colorTheme={themes[activeTheme]} activePage={activePage}/>
         {/* <Footer theme={themes[activeTheme]} /> */}
