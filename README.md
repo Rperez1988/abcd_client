@@ -17,3 +17,5 @@ Engineered a candlestick pattern analysis platform where Python scripts serve as
 - Retracement visualization: View each ABCD pattern based on its retracements for deeper analysis.
 - Strategy creation: Users can create and test trading strategies based on specific ABCD pattern traits.
 - Sorting and filtering: Sort and filter lists of ABCD patterns based on user-defined criteria.
+
+<img width="1920" alt="214647063-16ac00e9-186c-4535-87c2-c2e657b8ce1a" src="https://github.com/Rperez1988/abcd_client/assets/38891767/30a70202-ef63-4696-8792-591f97abdb64">
