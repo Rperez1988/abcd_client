@@ -9,7 +9,7 @@ Engineered a candlestick pattern analysis platform where Python scripts serve as
 - Detection of ABCD patterns in CSV data
 - Visualization of detected patterns on charts
 - Data analysis capabilities
-- **Symbol tracking**: Users can add symbols to a list within the software
+- ****Symbol tracking****: Users can add symbols to a list within the software
 - Daily update: The software automatically checks the symbols in the list daily for ABCD patterns.
 - Alerting: Users are alerted if an ABCD pattern is detected for any symbol in the list.
 - Historical patterns: View past ABCD patterns detected for each symbol.
