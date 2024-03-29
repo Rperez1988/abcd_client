@@ -14,5 +14,6 @@ Engineered a candlestick pattern analysis platform where Python scripts serve as
 - Alerting: Users are alerted if an ABCD pattern is detected for any symbol in the list.
 - Historical patterns: View past ABCD patterns detected for each symbol.
 - Individual stock analysis: Analyze the performance of individual stocks based on ABCD patterns.
+- Retracement visualization: View each ABCD pattern based on its retracements for deeper analysis.
 - Strategy creation: Users can create and test trading strategies based on specific ABCD pattern traits.
 - Sorting and filtering: Sort and filter lists of ABCD patterns based on user-defined criteria.
