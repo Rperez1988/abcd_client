@@ -4,9 +4,8 @@ Engineered a candlestick pattern analysis platform where Python scripts serve as
 
 ## Features
 
-- ****Symbol tracking****: Users can add symbols to a list within the software
-- **Daily update**: The software automatically checks the symbols in the list daily for ABCD patterns.
-- **Alerting**: Users are alerted if an ABCD pattern is detected for any symbol in the list.
+- ****Symbol tracking****: Add symbols to a list within the software
+- **Daily update**: Automatically checks the symbols in the list daily for ABCD patterns.
 - **Historical patterns**: View past ABCD patterns detected for each symbol.
 - **Individual stock analysis**: Analyze the performance of individual stocks based on ABCD patterns.
 - **Retracement visualization**: View each ABCD pattern based on its retracements for deeper analysis.
