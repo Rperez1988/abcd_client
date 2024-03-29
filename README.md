@@ -6,9 +6,6 @@ Engineered a candlestick pattern analysis platform where Python scripts serve as
 - 
 ## Features
 
-- Detection of ABCD patterns in CSV data
-- Visualization of detected patterns on charts
-- **Data analysis capabilities
 - ****Symbol tracking****: Users can add symbols to a list within the software
 - **Daily update**: The software automatically checks the symbols in the list daily for ABCD patterns.
 - **Alerting**: Users are alerted if an ABCD pattern is detected for any symbol in the list.
@@ -17,8 +14,6 @@ Engineered a candlestick pattern analysis platform where Python scripts serve as
 - **Retracement visualization**: View each ABCD pattern based on its retracements for deeper analysis.
 - **Strategy creation**: Users can create and test trading strategies based on specific ABCD pattern traits.
 - **Sorting and filtering**: Sort and filter lists of ABCD patterns based on user-defined criteria.
--  <strong>****Symbol tracking****:</strong>
+
 <img width="960" alt="268845531-ad12adad-ae19-4b2e-8dfe-5a60d7136ab3" src="https://github.com/Rperez1988/abcd_client/assets/38891767/f7111394-e1c6-473c-86ca-015e8fe67dc3">
 
-<img width="1920" alt="214647063-16ac00e9-186c-4535-87c2-c2e657b8ce1a" src="https://github.com/Rperez1988/abcd_client/assets/38891767/30a70202-ef63-4696-8792-591f97abdb64">
-<span style="background-color: yellow">This text will have a yellow background</span>
