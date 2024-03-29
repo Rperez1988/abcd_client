@@ -1,7 +1,6 @@
 # ABCD Screener
 
-Engineered a candlestick pattern analysis platform where Python scripts serve as the backbone, extracting vital data. This data flows into Django, acting as the orchestrator for processing and storage. React.js and HTML5 Canvas step in to present this information, offering users an interactive and visually captivating experience.
-
+Developed a candlestick pattern analysis platform that utilizes Python scripts to extract essential data. This data is then managed by Django, which orchestrates processing and storage. The presentation layer employs React.js and HTML5 Canvas to provide users with an interactive and visually appealing experience
 ## Features
 
 - ****Symbol tracking****: Add symbols to a list within the software
