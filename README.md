@@ -1,6 +1,6 @@
-# Project Title
+# ABCD Screener
 
-Short project description goes here.
+Engineered a candlestick pattern analysis platform where Python scripts serve as the backbone, extracting vital data. This data flows into Django, acting as the orchestrator for processing and storage. React.js and HTML5 Canvas step in to present this information, offering users an interactive and visually captivating experience.
 
 ## Table of Contents
 
