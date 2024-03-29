@@ -13,7 +13,12 @@ Engineered a candlestick pattern analysis platform where Python scripts serve as
 - [License](#license)
 - [Contact](#contact)
 
-## About
+- 
+## Features
+
+- Detection of ABCD patterns in CSV data
+- Visualization of detected patterns on charts
+- Data analysis capabilities
 
 Detailed project description goes here.
 
